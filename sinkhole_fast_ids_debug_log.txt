@@ -1,0 +1,89 @@
+00:00.236	ID:2	[INFO: Main      ] Starting Contiki-NG-release/v5.2-dirty
+00:00.236	ID:2	[INFO: Main      ] - Routing: RPL Lite
+00:00.236	ID:2	[INFO: Main      ] - Net: sicslowpan
+00:00.236	ID:2	[INFO: Main      ] - MAC: CSMA
+00:00.236	ID:2	[INFO: Main      ] - 802.15.4 PANID: 0xabcd
+00:00.236	ID:2	[INFO: Main      ] - 802.15.4 Default channel: 26
+00:00.236	ID:2	[INFO: Main      ] Node ID: 2
+00:00.236	ID:2	[INFO: Main      ] Link-layer address: 0002.0002.0002.0002
+00:00.236	ID:2	[INFO: Main      ] Tentative link-local IPv6 address: fe80::202:2:2:2
+00:00.236	ID:2	[INFO: NormalNode] Normal IoT node starting
+00:00.348	ID:4	[INFO: Main      ] Starting Contiki-NG-release/v5.2-dirty
+00:00.348	ID:4	[INFO: Main      ] - Routing: RPL Lite
+00:00.348	ID:4	[INFO: Main      ] - Net: sicslowpan
+00:00.348	ID:4	[INFO: Main      ] - MAC: CSMA
+00:00.348	ID:4	[INFO: Main      ] - 802.15.4 PANID: 0xabcd
+00:00.348	ID:4	[INFO: Main      ] - 802.15.4 Default channel: 26
+00:00.348	ID:4	[INFO: Main      ] Node ID: 4
+00:00.348	ID:4	[INFO: Main      ] Link-layer address: 0004.0004.0004.0004
+00:00.348	ID:4	[INFO: Main      ] Tentative link-local IPv6 address: fe80::204:4:4:4
+00:00.348	ID:4	[INFO: NormalNode] Normal IoT node starting
+00:00.382	ID:1	[INFO: Main      ] Starting Contiki-NG-release/v5.2-dirty
+00:00.382	ID:1	[INFO: Main      ] - Routing: RPL Lite
+00:00.382	ID:1	[INFO: Main      ] - Net: sicslowpan
+00:00.382	ID:1	[INFO: Main      ] - MAC: CSMA
+00:00.382	ID:1	[INFO: Main      ] - 802.15.4 PANID: 0xabcd
+00:00.382	ID:1	[INFO: Main      ] - 802.15.4 Default channel: 26
+00:00.382	ID:1	[INFO: Main      ] Node ID: 1
+00:00.382	ID:1	[INFO: Main      ] Link-layer address: 0001.0001.0001.0001
+00:00.382	ID:1	[INFO: Main      ] Tentative link-local IPv6 address: fe80::201:1:1:1
+00:00.382	ID:1	[INFO: IDS-Sinkhole] Secure IoT Sinkhole IDS server starting
+00:00.715	ID:5	[INFO: Main      ] Starting Contiki-NG-release/v5.2-dirty
+00:00.715	ID:5	[INFO: Main      ] - Routing: RPL Lite
+00:00.715	ID:5	[INFO: Main      ] - Net: sicslowpan
+00:00.715	ID:5	[INFO: Main      ] - MAC: CSMA
+00:00.715	ID:5	[INFO: Main      ] - 802.15.4 PANID: 0xabcd
+00:00.715	ID:5	[INFO: Main      ] - 802.15.4 Default channel: 26
+00:00.715	ID:5	[INFO: Main      ] Node ID: 5
+00:00.715	ID:5	[INFO: Main      ] Link-layer address: 0005.0005.0005.0005
+00:00.715	ID:5	[INFO: Main      ] Tentative link-local IPv6 address: fe80::205:5:5:5
+00:00.715	ID:5	[INFO: Sinkhole  ] Sinkhole attacker starting
+00:00.899	ID:3	[INFO: Main      ] Starting Contiki-NG-release/v5.2-dirty
+00:00.899	ID:3	[INFO: Main      ] - Routing: RPL Lite
+00:00.899	ID:3	[INFO: Main      ] - Net: sicslowpan
+00:00.899	ID:3	[INFO: Main      ] - MAC: CSMA
+00:00.899	ID:3	[INFO: Main      ] - 802.15.4 PANID: 0xabcd
+00:00.899	ID:3	[INFO: Main      ] - 802.15.4 Default channel: 26
+00:00.899	ID:3	[INFO: Main      ] Node ID: 3
+00:00.899	ID:3	[INFO: Main      ] Link-layer address: 0003.0003.0003.0003
+00:00.899	ID:3	[INFO: Main      ] Tentative link-local IPv6 address: fe80::203:3:3:3
+00:00.899	ID:3	[INFO: NormalNode] Normal IoT node starting
+00:04.382	ID:1	[WARN: IDS-Sinkhole] IDS ALERT: SINKHOLE DETECTED node=fe80::203:3:3:3 advertised_rank=160 threshold=192
+00:04.383	ID:1	[WARN: IDS-Sinkhole] IDS ACTION: BLOCK sent to sinkhole fe80::203:3:3:3
+00:04.383	ID:1	[WARN: IDS-Sinkhole] IDS ACTION: sinkhole node isolated
+00:04.383	ID:1	[WARN: IDS-Sinkhole] IDS ACTION: RPL global repair triggered
+00:04.418	ID:3	[INFO: NormalNode] RESPONSE payload=BLOCK
+00:04.418	ID:3	[INFO: NormalNode] NORMAL METRIC tx=0 rx=1 missed=0
+00:07.461	ID:4	[INFO: NormalNode] RPL root not reachable yet
+00:08.581	ID:3	[INFO: NormalNode] RPL root not reachable yet
+00:08.813	ID:2	[INFO: NormalNode] RPL root not reachable yet
+00:10.715	ID:5	[WARN: Sinkhole  ] SINKHOLE ATTACK ACTIVE
+00:10.716	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+00:15.717	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+00:20.718	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+00:25.719	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+00:30.720	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+00:35.721	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+00:40.722	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+00:45.723	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+00:50.724	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+00:55.725	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+01:00.726	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+01:05.727	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+01:07.037	ID:4	[INFO: NormalNode] NORMAL TX seq=0 -> fd00::201:1:1:1
+01:07.050	ID:1	[INFO: IDS-Sinkhole] Received packet from fd00::204:4:4:4
+01:07.063	ID:4	[INFO: NormalNode] RESPONSE seq=0 latency_ms=26
+01:07.063	ID:4	[INFO: NormalNode] NORMAL METRIC tx=1 rx=1 missed=0
+01:08.400	ID:3	[INFO: NormalNode] NORMAL TX seq=0 -> fd00::201:1:1:1
+01:08.414	ID:1	[INFO: IDS-Sinkhole] Received packet from fd00::203:3:3:3
+01:08.420	ID:3	[INFO: NormalNode] RESPONSE seq=0 latency_ms=20
+01:08.420	ID:3	[INFO: NormalNode] NORMAL METRIC tx=1 rx=2 missed=0
+01:09.732	ID:2	[INFO: NormalNode] NORMAL TX seq=0 -> fd00::201:1:1:1
+01:09.771	ID:1	[INFO: IDS-Sinkhole] Received packet from fd00::202:2:2:2
+01:09.788	ID:2	[INFO: NormalNode] RESPONSE seq=0 latency_ms=56
+01:09.788	ID:2	[INFO: NormalNode] NORMAL METRIC tx=1 rx=1 missed=0
+01:10.728	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+01:15.729	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+01:20.730	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+01:25.731	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+01:30.732	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank

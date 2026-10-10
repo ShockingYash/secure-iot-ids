@@ -1,0 +1,301 @@
+00:00.000 ID:0 SCRIPT_LOGGER_STARTED
+00:00.000 ID:0 SCRIPT_LOGGER_STARTED
+00:00.236 ID:2 [INFO: Main      ] - Routing: RPL Lite
+00:00.236 ID:2 [INFO: Main      ] - Net: sicslowpan
+00:00.236 ID:2 [INFO: Main      ] - MAC: CSMA
+00:00.236 ID:2 [INFO: Main      ] - 802.15.4 PANID: 0xabcd
+00:00.236 ID:2 [INFO: Main      ] - 802.15.4 Default channel: 26
+00:00.236 ID:2 [INFO: Main      ] Node ID: 2
+00:00.236 ID:2 [INFO: Main      ] Link-layer address: 0002.0002.0002.0002
+00:00.236 ID:2 [INFO: Main      ] Tentative link-local IPv6 address: fe80::202:2:2:2
+00:00.236 ID:2 [INFO: NormalNode] Normal IoT node starting
+00:00.348 ID:4 [INFO: Main      ] Starting Contiki-NG-release/v5.2
+00:00.348 ID:4 [INFO: Main      ] - Routing: RPL Lite
+00:00.348 ID:4 [INFO: Main      ] - Net: sicslowpan
+00:00.348 ID:4 [INFO: Main      ] - MAC: CSMA
+00:00.348 ID:4 [INFO: Main      ] - 802.15.4 PANID: 0xabcd
+00:00.348 ID:4 [INFO: Main      ] - 802.15.4 Default channel: 26
+00:00.348 ID:4 [INFO: Main      ] Node ID: 4
+00:00.348 ID:4 [INFO: Main      ] Link-layer address: 0004.0004.0004.0004
+00:00.348 ID:4 [INFO: Main      ] Tentative link-local IPv6 address: fe80::204:4:4:4
+00:00.348 ID:4 [INFO: NormalNode] Normal IoT node starting
+00:00.382 ID:1 [INFO: Main      ] Starting Contiki-NG-release/v5.2
+00:00.382 ID:1 [INFO: Main      ] - Routing: RPL Lite
+00:00.382 ID:1 [INFO: Main      ] - Net: sicslowpan
+00:00.382 ID:1 [INFO: Main      ] - MAC: CSMA
+00:00.382 ID:1 [INFO: Main      ] - 802.15.4 PANID: 0xabcd
+00:00.382 ID:1 [INFO: Main      ] - 802.15.4 Default channel: 26
+00:00.382 ID:1 [INFO: Main      ] Node ID: 1
+00:00.382 ID:1 [INFO: Main      ] Link-layer address: 0001.0001.0001.0001
+00:00.382 ID:1 [INFO: Main      ] Tentative link-local IPv6 address: fe80::201:1:1:1
+00:00.382 ID:1 [INFO: IDS-Server] Secure IoT IDS server starting
+00:00.382 ID:1 [INFO: IDS-Server] RPL root and UDP IDS server ready
+00:00.715 ID:5 [INFO: Main      ] Starting Contiki-NG-release/v5.2
+00:00.715 ID:5 [INFO: Main      ] - Routing: RPL Lite
+00:00.715 ID:5 [INFO: Main      ] - Net: sicslowpan
+00:00.715 ID:5 [INFO: Main      ] - MAC: CSMA
+00:00.715 ID:5 [INFO: Main      ] - 802.15.4 PANID: 0xabcd
+00:00.715 ID:5 [INFO: Main      ] - 802.15.4 Default channel: 26
+00:00.715 ID:5 [INFO: Main      ] Node ID: 5
+00:00.715 ID:5 [INFO: Main      ] Link-layer address: 0005.0005.0005.0005
+00:00.715 ID:5 [INFO: Main      ] Tentative link-local IPv6 address: fe80::205:5:5:5
+00:00.715 ID:5 [INFO: FloodAttack] Flooding attacker starting
+00:00.899 ID:3 [INFO: Main      ] Starting Contiki-NG-release/v5.2
+00:00.899 ID:3 [INFO: Main      ] - Routing: RPL Lite
+00:00.899 ID:3 [INFO: Main      ] - Net: sicslowpan
+00:00.899 ID:3 [INFO: Main      ] - MAC: CSMA
+00:00.899 ID:3 [INFO: Main      ] - 802.15.4 PANID: 0xabcd
+00:00.899 ID:3 [INFO: Main      ] - 802.15.4 Default channel: 26
+00:00.899 ID:3 [INFO: Main      ] Node ID: 3
+00:00.899 ID:3 [INFO: Main      ] Link-layer address: 0003.0003.0003.0003
+00:00.899 ID:3 [INFO: Main      ] Tentative link-local IPv6 address: fe80::203:3:3:3
+00:00.899 ID:3 [INFO: NormalNode] Normal IoT node starting
+00:07.461 ID:4 [INFO: NormalNode] RPL root not reachable yet
+00:08.581 ID:3 [INFO: NormalNode] RPL root not reachable yet
+00:08.813 ID:2 [INFO: NormalNode] RPL root not reachable yet
+00:10.816 ID:5 [INFO: FloodAttack] FLOOD TX seq=1
+00:10.844 ID:1 [INFO: IDS-Server] RX from fd00::205:5:5:5 payload=F,0
+00:10.844 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=1 normal_rx=0 attacks_detected=0
+00:10.917 ID:5 [INFO: FloodAttack] FLOOD TX seq=2
+00:10.922 ID:1 [INFO: IDS-Server] RX from fd00::205:5:5:5 payload=F,1
+00:10.922 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=2 normal_rx=0 attacks_detected=0
+00:11.018 ID:5 [INFO: FloodAttack] FLOOD TX seq=3
+00:11.035 ID:1 [INFO: IDS-Server] RX from fd00::205:5:5:5 payload=F,2
+00:11.035 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=3 normal_rx=0 attacks_detected=0
+00:11.119 ID:5 [INFO: FloodAttack] FLOOD TX seq=4
+00:11.150 ID:1 [INFO: IDS-Server] RX from fd00::205:5:5:5 payload=F,3
+00:11.150 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=4 normal_rx=0 attacks_detected=0
+00:11.220 ID:5 [INFO: FloodAttack] FLOOD TX seq=5
+00:11.250 ID:1 [INFO: IDS-Server] RX from fd00::205:5:5:5 payload=F,4
+00:11.250 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=5 normal_rx=0 attacks_detected=0
+00:11.321 ID:5 [INFO: FloodAttack] FLOOD TX seq=6
+00:11.325 ID:1 [INFO: IDS-Server] IDS ALERT: FLOODING DETECTED source=fd00::205:5:5:5 rate=6 packets/sec
+00:11.326 ID:1 [INFO: IDS-Server] IDS ACTION: source blacklisted and BLOCK sent
+00:11.326 ID:1 [INFO: IDS-Server] IDS DROP: flooding packet from source=fd00::201:1:1:1
+00:11.335 ID:5 [INFO: FloodAttack] MITIGATION: BLOCK received from IDS
+00:11.335 ID:5 [INFO: FloodAttack] MITIGATION: attacker stopped
+01:07.037 ID:4 [INFO: NormalNode] NORMAL TX seq=0 -> fd00::201:1:1:1
+01:07.062 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::204:4:4:4 payload=N,0,66690
+01:07.063 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=7 normal_rx=1 attacks_detected=1
+01:07.089 ID:4 [INFO: NormalNode] RESPONSE seq=0 latency_ms=52
+01:07.089 ID:4 [INFO: NormalNode] NORMAL METRIC tx=1 rx=1 missed=0
+01:08.400 ID:3 [INFO: NormalNode] NORMAL TX seq=0 -> fd00::201:1:1:1
+01:08.428 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::203:3:3:3 payload=N,0,67502
+01:08.429 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=8 normal_rx=2 attacks_detected=1
+01:08.457 ID:3 [INFO: NormalNode] RESPONSE seq=0 latency_ms=57
+01:08.457 ID:3 [INFO: NormalNode] NORMAL METRIC tx=1 rx=1 missed=0
+01:09.732 ID:2 [INFO: NormalNode] NORMAL TX seq=0 -> fd00::201:1:1:1
+01:09.763 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::202:2:2:2 payload=N,0,69497
+01:09.764 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=9 normal_rx=3 attacks_detected=1
+01:09.769 ID:2 [INFO: NormalNode] RESPONSE seq=0 latency_ms=37
+01:09.769 ID:2 [INFO: NormalNode] NORMAL METRIC tx=1 rx=1 missed=0
+02:06.190 ID:4 [INFO: NormalNode] NORMAL TX seq=1 -> fd00::201:1:1:1
+02:06.229 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::204:4:4:4 payload=N,1,125843
+02:06.230 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=10 normal_rx=4 attacks_detected=1
+02:06.235 ID:4 [INFO: NormalNode] RESPONSE seq=1 latency_ms=45
+02:06.235 ID:4 [INFO: NormalNode] NORMAL METRIC tx=2 rx=2 missed=0
+02:07.798 ID:3 [INFO: NormalNode] NORMAL TX seq=1 -> fd00::201:1:1:1
+02:07.836 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::203:3:3:3 payload=N,1,126900
+02:07.837 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=11 normal_rx=5 attacks_detected=1
+02:07.843 ID:3 [INFO: NormalNode] RESPONSE seq=1 latency_ms=45
+02:07.843 ID:3 [INFO: NormalNode] NORMAL METRIC tx=2 rx=2 missed=0
+02:09.786 ID:2 [INFO: NormalNode] NORMAL TX seq=1 -> fd00::201:1:1:1
+02:09.793 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::202:2:2:2 payload=N,1,129551
+02:09.794 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=12 normal_rx=6 attacks_detected=1
+02:09.802 ID:2 [INFO: NormalNode] RESPONSE seq=1 latency_ms=16
+02:09.802 ID:2 [INFO: NormalNode] NORMAL METRIC tx=2 rx=2 missed=0
+03:07.016 ID:4 [INFO: NormalNode] NORMAL TX seq=2 -> fd00::201:1:1:1
+03:07.051 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::204:4:4:4 payload=N,2,186669
+03:07.052 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=13 normal_rx=7 attacks_detected=1
+03:07.096 ID:4 [INFO: NormalNode] RESPONSE seq=2 latency_ms=80
+03:07.096 ID:4 [INFO: NormalNode] NORMAL METRIC tx=3 rx=3 missed=0
+03:07.413 ID:3 [INFO: NormalNode] NORMAL TX seq=2 -> fd00::201:1:1:1
+03:07.456 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::203:3:3:3 payload=N,2,186515
+03:07.457 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=14 normal_rx=8 attacks_detected=1
+03:07.462 ID:3 [INFO: NormalNode] RESPONSE seq=2 latency_ms=49
+03:07.462 ID:3 [INFO: NormalNode] NORMAL METRIC tx=3 rx=3 missed=0
+03:08.819 ID:2 [INFO: NormalNode] NORMAL TX seq=2 -> fd00::201:1:1:1
+03:08.842 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::202:2:2:2 payload=N,2,188584
+03:08.843 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=15 normal_rx=9 attacks_detected=1
+03:08.869 ID:2 [INFO: NormalNode] RESPONSE seq=2 latency_ms=50
+03:08.869 ID:2 [INFO: NormalNode] NORMAL METRIC tx=3 rx=3 missed=0
+04:06.495 ID:4 [INFO: NormalNode] NORMAL TX seq=3 -> fd00::201:1:1:1
+04:06.522 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::204:4:4:4 payload=N,3,246148
+04:06.523 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=16 normal_rx=10 attacks_detected=1
+04:06.558 ID:4 [INFO: NormalNode] RESPONSE seq=3 latency_ms=63
+04:06.558 ID:4 [INFO: NormalNode] NORMAL METRIC tx=4 rx=4 missed=0
+04:07.827 ID:2 [INFO: NormalNode] NORMAL TX seq=3 -> fd00::201:1:1:1
+04:07.872 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::202:2:2:2 payload=N,3,247592
+04:07.873 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=17 normal_rx=11 attacks_detected=1
+04:07.899 ID:3 [INFO: NormalNode] NORMAL TX seq=3 -> fd00::201:1:1:1
+04:07.908 ID:2 [INFO: NormalNode] RESPONSE seq=3 latency_ms=81
+04:07.908 ID:2 [INFO: NormalNode] NORMAL METRIC tx=4 rx=4 missed=0
+04:07.933 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::203:3:3:3 payload=N,3,247001
+04:07.934 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=18 normal_rx=12 attacks_detected=1
+04:07.962 ID:3 [INFO: NormalNode] RESPONSE seq=3 latency_ms=63
+04:07.962 ID:3 [INFO: NormalNode] NORMAL METRIC tx=4 rx=4 missed=0
+05:07.245 ID:3 [INFO: NormalNode] NORMAL TX seq=4 -> fd00::201:1:1:1
+05:07.267 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::203:3:3:3 payload=N,4,306347
+05:07.268 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=19 normal_rx=13 attacks_detected=1
+05:07.277 ID:3 [INFO: NormalNode] RESPONSE seq=4 latency_ms=32
+05:07.277 ID:3 [INFO: NormalNode] NORMAL METRIC tx=5 rx=5 missed=0
+05:07.331 ID:4 [INFO: NormalNode] NORMAL TX seq=4 -> fd00::201:1:1:1
+05:07.350 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::204:4:4:4 payload=N,4,306984
+05:07.351 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=20 normal_rx=14 attacks_detected=1
+05:07.385 ID:4 [INFO: NormalNode] RESPONSE seq=4 latency_ms=54
+05:07.385 ID:4 [INFO: NormalNode] NORMAL METRIC tx=5 rx=5 missed=0
+05:08.635 ID:2 [INFO: NormalNode] NORMAL TX seq=4 -> fd00::201:1:1:1
+05:08.640 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::202:2:2:2 payload=N,4,308400
+05:08.641 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=21 normal_rx=15 attacks_detected=1
+05:08.667 ID:2 [INFO: NormalNode] RESPONSE seq=4 latency_ms=32
+05:08.667 ID:2 [INFO: NormalNode] NORMAL METRIC tx=5 rx=5 missed=0
+06:07.063 ID:4 [INFO: NormalNode] NORMAL TX seq=5 -> fd00::201:1:1:1
+06:07.083 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::204:4:4:4 payload=N,5,366716
+06:07.084 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=22 normal_rx=16 attacks_detected=1
+06:07.105 ID:4 [INFO: NormalNode] RESPONSE seq=5 latency_ms=42
+06:07.105 ID:4 [INFO: NormalNode] NORMAL METRIC tx=6 rx=6 missed=0
+06:07.527 ID:3 [INFO: NormalNode] NORMAL TX seq=5 -> fd00::201:1:1:1
+06:07.563 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::203:3:3:3 payload=N,5,366629
+06:07.564 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=23 normal_rx=17 attacks_detected=1
+06:07.602 ID:3 [INFO: NormalNode] RESPONSE seq=5 latency_ms=75
+06:07.602 ID:3 [INFO: NormalNode] NORMAL METRIC tx=6 rx=6 missed=0
+06:09.566 ID:2 [INFO: NormalNode] NORMAL TX seq=5 -> fd00::201:1:1:1
+06:09.589 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::202:2:2:2 payload=N,5,369331
+06:09.590 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=24 normal_rx=18 attacks_detected=1
+06:09.604 ID:2 [INFO: NormalNode] RESPONSE seq=5 latency_ms=38
+06:09.604 ID:2 [INFO: NormalNode] NORMAL METRIC tx=6 rx=6 missed=0
+07:07.342 ID:3 [INFO: NormalNode] NORMAL TX seq=6 -> fd00::201:1:1:1
+07:07.356 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::203:3:3:3 payload=N,6,426444
+07:07.357 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=25 normal_rx=19 attacks_detected=1
+07:07.367 ID:3 [INFO: NormalNode] RESPONSE seq=6 latency_ms=25
+07:07.367 ID:3 [INFO: NormalNode] NORMAL METRIC tx=7 rx=7 missed=0
+07:07.531 ID:4 [INFO: NormalNode] NORMAL TX seq=6 -> fd00::201:1:1:1
+07:07.555 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::204:4:4:4 payload=N,6,427184
+07:07.556 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=26 normal_rx=20 attacks_detected=1
+07:07.565 ID:4 [INFO: NormalNode] RESPONSE seq=6 latency_ms=34
+07:07.565 ID:4 [INFO: NormalNode] NORMAL METRIC tx=7 rx=7 missed=0
+07:08.694 ID:2 [INFO: NormalNode] NORMAL TX seq=6 -> fd00::201:1:1:1
+07:08.702 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::202:2:2:2 payload=N,6,428459
+07:08.703 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=27 normal_rx=21 attacks_detected=1
+07:08.742 ID:2 [INFO: NormalNode] RESPONSE seq=6 latency_ms=48
+07:08.742 ID:2 [INFO: NormalNode] NORMAL METRIC tx=7 rx=7 missed=0
+08:06.753 ID:4 [INFO: NormalNode] NORMAL TX seq=7 -> fd00::201:1:1:1
+08:06.763 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::204:4:4:4 payload=N,7,486406
+08:06.764 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=28 normal_rx=22 attacks_detected=1
+08:06.769 ID:4 [INFO: NormalNode] RESPONSE seq=7 latency_ms=16
+08:06.769 ID:4 [INFO: NormalNode] NORMAL METRIC tx=8 rx=8 missed=0
+08:07.707 ID:3 [INFO: NormalNode] NORMAL TX seq=7 -> fd00::201:1:1:1
+08:07.713 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::203:3:3:3 payload=N,7,486809
+08:07.714 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=29 normal_rx=23 attacks_detected=1
+08:07.736 ID:3 [INFO: NormalNode] RESPONSE seq=7 latency_ms=29
+08:07.736 ID:3 [INFO: NormalNode] NORMAL METRIC tx=8 rx=8 missed=0
+08:08.811 ID:2 [INFO: NormalNode] NORMAL TX seq=7 -> fd00::201:1:1:1
+08:08.826 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::202:2:2:2 payload=N,7,488576
+08:08.827 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=30 normal_rx=24 attacks_detected=1
+08:08.866 ID:2 [INFO: NormalNode] RESPONSE seq=7 latency_ms=55
+08:08.866 ID:2 [INFO: NormalNode] NORMAL METRIC tx=8 rx=8 missed=0
+09:06.108 ID:4 [INFO: NormalNode] NORMAL TX seq=8 -> fd00::201:1:1:1
+09:06.122 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::204:4:4:4 payload=N,8,545761
+09:06.123 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=31 normal_rx=25 attacks_detected=1
+09:06.151 ID:4 [INFO: NormalNode] RESPONSE seq=8 latency_ms=43
+09:06.151 ID:4 [INFO: NormalNode] NORMAL METRIC tx=9 rx=9 missed=0
+09:06.903 ID:3 [INFO: NormalNode] NORMAL TX seq=8 -> fd00::201:1:1:1
+09:06.914 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::203:3:3:3 payload=N,8,546005
+09:06.915 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=32 normal_rx=26 attacks_detected=1
+09:06.920 ID:3 [INFO: NormalNode] RESPONSE seq=8 latency_ms=17
+09:06.920 ID:3 [INFO: NormalNode] NORMAL METRIC tx=9 rx=9 missed=0
+09:09.577 ID:2 [INFO: NormalNode] NORMAL TX seq=8 -> fd00::201:1:1:1
+09:09.613 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::202:2:2:2 payload=N,8,549342
+09:09.614 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=33 normal_rx=27 attacks_detected=1
+09:09.621 ID:2 [INFO: NormalNode] RESPONSE seq=8 latency_ms=44
+09:09.621 ID:2 [INFO: NormalNode] NORMAL METRIC tx=9 rx=9 missed=0
+10:06.914 ID:3 [INFO: NormalNode] NORMAL TX seq=9 -> fd00::201:1:1:1
+10:06.935 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::203:3:3:3 payload=N,9,606016
+10:06.936 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=34 normal_rx=28 attacks_detected=1
+10:06.972 ID:3 [INFO: NormalNode] RESPONSE seq=9 latency_ms=58
+10:06.972 ID:3 [INFO: NormalNode] NORMAL METRIC tx=10 rx=10 missed=0
+10:06.983 ID:4 [INFO: NormalNode] NORMAL TX seq=9 -> fd00::201:1:1:1
+10:07.019 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::204:4:4:4 payload=N,9,606636
+10:07.020 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=35 normal_rx=29 attacks_detected=1
+10:07.045 ID:4 [INFO: NormalNode] RESPONSE seq=9 latency_ms=62
+10:07.045 ID:4 [INFO: NormalNode] NORMAL METRIC tx=10 rx=10 missed=0
+10:09.705 ID:2 [INFO: NormalNode] NORMAL TX seq=9 -> fd00::201:1:1:1
+10:09.735 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::202:2:2:2 payload=N,9,609470
+10:09.736 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=36 normal_rx=30 attacks_detected=1
+10:09.751 ID:2 [INFO: NormalNode] RESPONSE seq=9 latency_ms=46
+10:09.751 ID:2 [INFO: NormalNode] NORMAL METRIC tx=10 rx=10 missed=0
+11:07.409 ID:4 [INFO: NormalNode] NORMAL TX seq=10 -> fd00::201:1:1:1
+11:07.440 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::204:4:4:4 payload=N,10,667062
+11:07.441 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=37 normal_rx=31 attacks_detected=1
+11:07.466 ID:4 [INFO: NormalNode] RESPONSE seq=10 latency_ms=57
+11:07.466 ID:4 [INFO: NormalNode] NORMAL METRIC tx=11 rx=11 missed=0
+11:07.832 ID:3 [INFO: NormalNode] NORMAL TX seq=10 -> fd00::201:1:1:1
+11:07.842 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::203:3:3:3 payload=N,10,666934
+11:07.843 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=38 normal_rx=32 attacks_detected=1
+11:07.867 ID:3 [INFO: NormalNode] RESPONSE seq=10 latency_ms=35
+11:07.867 ID:3 [INFO: NormalNode] NORMAL METRIC tx=11 rx=11 missed=0
+11:09.995 ID:2 [INFO: NormalNode] NORMAL TX seq=10 -> fd00::201:1:1:1
+11:10.003 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::202:2:2:2 payload=N,10,669760
+11:10.004 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=39 normal_rx=33 attacks_detected=1
+11:10.016 ID:2 [INFO: NormalNode] RESPONSE seq=10 latency_ms=21
+11:10.016 ID:2 [INFO: NormalNode] NORMAL METRIC tx=11 rx=11 missed=0
+12:06.931 ID:4 [INFO: NormalNode] NORMAL TX seq=11 -> fd00::201:1:1:1
+12:06.959 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::204:4:4:4 payload=N,11,726584
+12:06.960 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=40 normal_rx=34 attacks_detected=1
+12:06.971 ID:4 [INFO: NormalNode] RESPONSE seq=11 latency_ms=40
+12:06.971 ID:4 [INFO: NormalNode] NORMAL METRIC tx=12 rx=12 missed=0
+12:08.766 ID:3 [INFO: NormalNode] NORMAL TX seq=11 -> fd00::201:1:1:1
+12:08.800 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::203:3:3:3 payload=N,11,727868
+12:08.801 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=41 normal_rx=35 attacks_detected=1
+12:08.806 ID:3 [INFO: NormalNode] RESPONSE seq=11 latency_ms=40
+12:08.806 ID:3 [INFO: NormalNode] NORMAL METRIC tx=12 rx=12 missed=0
+12:09.709 ID:2 [INFO: NormalNode] NORMAL TX seq=11 -> fd00::201:1:1:1
+12:09.716 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::202:2:2:2 payload=N,11,729474
+12:09.717 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=42 normal_rx=36 attacks_detected=1
+12:09.746 ID:2 [INFO: NormalNode] RESPONSE seq=11 latency_ms=37
+12:09.746 ID:2 [INFO: NormalNode] NORMAL METRIC tx=12 rx=12 missed=0
+13:06.345 ID:4 [INFO: NormalNode] NORMAL TX seq=12 -> fd00::201:1:1:1
+13:06.355 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::204:4:4:4 payload=N,12,785998
+13:06.356 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=43 normal_rx=37 attacks_detected=1
+13:06.384 ID:4 [INFO: NormalNode] RESPONSE seq=12 latency_ms=39
+13:06.384 ID:4 [INFO: NormalNode] NORMAL METRIC tx=13 rx=13 missed=0
+13:08.807 ID:3 [INFO: NormalNode] NORMAL TX seq=12 -> fd00::201:1:1:1
+13:08.843 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::203:3:3:3 payload=N,12,787909
+13:08.844 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=44 normal_rx=38 attacks_detected=1
+13:08.885 ID:3 [INFO: NormalNode] RESPONSE seq=12 latency_ms=78
+13:08.885 ID:3 [INFO: NormalNode] NORMAL METRIC tx=13 rx=13 missed=0
+13:09.657 ID:2 [INFO: NormalNode] NORMAL TX seq=12 -> fd00::201:1:1:1
+13:09.667 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::202:2:2:2 payload=N,12,789422
+13:09.668 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=45 normal_rx=39 attacks_detected=1
+13:09.707 ID:2 [INFO: NormalNode] RESPONSE seq=12 latency_ms=50
+13:09.707 ID:2 [INFO: NormalNode] NORMAL METRIC tx=13 rx=13 missed=0
+14:06.272 ID:4 [INFO: NormalNode] NORMAL TX seq=13 -> fd00::201:1:1:1
+14:06.304 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::204:4:4:4 payload=N,13,845925
+14:06.305 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=46 normal_rx=40 attacks_detected=1
+14:06.311 ID:4 [INFO: NormalNode] RESPONSE seq=13 latency_ms=39
+14:06.311 ID:4 [INFO: NormalNode] NORMAL METRIC tx=14 rx=14 missed=0
+14:08.152 ID:3 [INFO: NormalNode] NORMAL TX seq=13 -> fd00::201:1:1:1
+14:08.164 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::203:3:3:3 payload=N,13,847254
+14:08.165 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=47 normal_rx=41 attacks_detected=1
+14:08.200 ID:3 [INFO: NormalNode] RESPONSE seq=13 latency_ms=48
+14:08.200 ID:3 [INFO: NormalNode] NORMAL METRIC tx=14 rx=14 missed=0
+14:08.837 ID:2 [INFO: NormalNode] NORMAL TX seq=13 -> fd00::201:1:1:1
+14:08.851 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::202:2:2:2 payload=N,13,848602
+14:08.852 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=48 normal_rx=42 attacks_detected=1
+14:08.887 ID:2 [INFO: NormalNode] RESPONSE seq=13 latency_ms=50
+14:08.887 ID:2 [INFO: NormalNode] NORMAL METRIC tx=14 rx=14 missed=0
+15:07.195 ID:4 [INFO: NormalNode] NORMAL TX seq=14 -> fd00::201:1:1:1
+15:07.236 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::204:4:4:4 payload=N,14,906848
+15:07.237 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=49 normal_rx=43 attacks_detected=1
+15:07.260 ID:4 [INFO: NormalNode] RESPONSE seq=14 latency_ms=65
+15:07.260 ID:4 [INFO: NormalNode] NORMAL METRIC tx=15 rx=15 missed=0
+15:07.900 ID:3 [INFO: NormalNode] NORMAL TX seq=14 -> fd00::201:1:1:1
+15:07.935 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::203:3:3:3 payload=N,14,907002
+15:07.936 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=50 normal_rx=44 attacks_detected=1
+15:07.951 ID:3 [INFO: NormalNode] RESPONSE seq=14 latency_ms=51
+15:07.951 ID:3 [INFO: NormalNode] NORMAL METRIC tx=15 rx=15 missed=0
+15:09.741 ID:2 [INFO: NormalNode] NORMAL TX seq=14 -> fd00::201:1:1:1
+15:09.785 ID:1 [INFO: IDS-Server] NORMAL RX from fd00::202:2:2:2 payload=N,14,909506
+15:09.786 ID:1 [INFO: IDS-Server] IDS METRIC total_rx=51 normal_rx=45 attacks_detected=1
+15:09.800 ID:2 [INFO: NormalNode] RESPONSE seq=14 latency_ms=59
+15:09.800 ID:2 [INFO: NormalNode] NORMAL METRIC tx=15 rx=15 missed=0

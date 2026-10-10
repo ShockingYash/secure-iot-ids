@@ -1,0 +1,47 @@
+# Node dependencies and build output
+**/node_modules/
+**/dist/
+**/.vite/
+
+# Generated C/Contiki build artifacts
+**/build/
+**/obj_cooja/
+*.o
+*.d
+*.a
+*.elf
+*.class
+*.cooja
+*.map
+
+# Environment variables and local secrets
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Live logger/bridge state and experiment archives
+/live_cooja_ids.log
+/live_cooja_ids.log.*
+*.bridge-state.json
+/.finish_experiment_last_marker
+/experiment_archive/
+**/_SAFE_BACKUPS/
+
+# Debug-only/development logs (keep canonical logs explicitly listed below)
+/*_debug_log.txt
+/*_v2_log.txt
+/sinkhole_routing_diag_log.txt
+/sinkhole_ids_log.txt
+
+# Temporary/editor/OS files
+*.tmp
+*.trim
+*~
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+*:Zone.Identifier

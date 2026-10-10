@@ -1,0 +1,158 @@
+00:00.236	ID:2	[INFO: Main      ] Starting Contiki-NG-release/v5.2-dirty
+00:00.236	ID:2	[INFO: Main      ] - Routing: RPL Lite
+00:00.236	ID:2	[INFO: Main      ] - Net: sicslowpan
+00:00.236	ID:2	[INFO: Main      ] - MAC: CSMA
+00:00.236	ID:2	[INFO: Main      ] - 802.15.4 PANID: 0xabcd
+00:00.236	ID:2	[INFO: Main      ] - 802.15.4 Default channel: 26
+00:00.236	ID:2	[INFO: Main      ] Node ID: 2
+00:00.236	ID:2	[INFO: Main      ] Link-layer address: 0002.0002.0002.0002
+00:00.236	ID:2	[INFO: Main      ] Tentative link-local IPv6 address: fe80::202:2:2:2
+00:00.236	ID:2	[INFO: NormalNode] Normal IoT node starting
+00:00.348	ID:4	[INFO: Main      ] Starting Contiki-NG-release/v5.2-dirty
+00:00.348	ID:4	[INFO: Main      ] - Routing: RPL Lite
+00:00.348	ID:4	[INFO: Main      ] - Net: sicslowpan
+00:00.348	ID:4	[INFO: Main      ] - MAC: CSMA
+00:00.348	ID:4	[INFO: Main      ] - 802.15.4 PANID: 0xabcd
+00:00.348	ID:4	[INFO: Main      ] - 802.15.4 Default channel: 26
+00:00.348	ID:4	[INFO: Main      ] Node ID: 4
+00:00.348	ID:4	[INFO: Main      ] Link-layer address: 0004.0004.0004.0004
+00:00.348	ID:4	[INFO: Main      ] Tentative link-local IPv6 address: fe80::204:4:4:4
+00:00.348	ID:4	[INFO: NormalNode] Normal IoT node starting
+00:00.382	ID:1	[INFO: Main      ] Starting Contiki-NG-release/v5.2-dirty
+00:00.382	ID:1	[INFO: Main      ] - Routing: RPL Lite
+00:00.382	ID:1	[INFO: Main      ] - Net: sicslowpan
+00:00.382	ID:1	[INFO: Main      ] - MAC: CSMA
+00:00.382	ID:1	[INFO: Main      ] - 802.15.4 PANID: 0xabcd
+00:00.382	ID:1	[INFO: Main      ] - 802.15.4 Default channel: 26
+00:00.382	ID:1	[INFO: Main      ] Node ID: 1
+00:00.382	ID:1	[INFO: Main      ] Link-layer address: 0001.0001.0001.0001
+00:00.382	ID:1	[INFO: Main      ] Tentative link-local IPv6 address: fe80::201:1:1:1
+00:00.382	ID:1	[INFO: IDS-Sinkhole] Secure IoT Sinkhole IDS server starting
+00:00.715	ID:5	[INFO: Main      ] Starting Contiki-NG-release/v5.2-dirty
+00:00.715	ID:5	[INFO: Main      ] - Routing: RPL Lite
+00:00.715	ID:5	[INFO: Main      ] - Net: sicslowpan
+00:00.715	ID:5	[INFO: Main      ] - MAC: CSMA
+00:00.715	ID:5	[INFO: Main      ] - 802.15.4 PANID: 0xabcd
+00:00.715	ID:5	[INFO: Main      ] - 802.15.4 Default channel: 26
+00:00.715	ID:5	[INFO: Main      ] Node ID: 5
+00:00.715	ID:5	[INFO: Main      ] Link-layer address: 0005.0005.0005.0005
+00:00.715	ID:5	[INFO: Main      ] Tentative link-local IPv6 address: fe80::205:5:5:5
+00:00.715	ID:5	[INFO: Sinkhole  ] Sinkhole attacker starting
+00:00.899	ID:3	[INFO: Main      ] Starting Contiki-NG-release/v5.2-dirty
+00:00.899	ID:3	[INFO: Main      ] - Routing: RPL Lite
+00:00.899	ID:3	[INFO: Main      ] - Net: sicslowpan
+00:00.899	ID:3	[INFO: Main      ] - MAC: CSMA
+00:00.899	ID:3	[INFO: Main      ] - 802.15.4 PANID: 0xabcd
+00:00.899	ID:3	[INFO: Main      ] - 802.15.4 Default channel: 26
+00:00.899	ID:3	[INFO: Main      ] Node ID: 3
+00:00.899	ID:3	[INFO: Main      ] Link-layer address: 0003.0003.0003.0003
+00:00.899	ID:3	[INFO: Main      ] Tentative link-local IPv6 address: fe80::203:3:3:3
+00:00.899	ID:3	[INFO: NormalNode] Normal IoT node starting
+00:07.461	ID:4	[INFO: NormalNode] RPL root not reachable yet
+00:08.581	ID:3	[INFO: NormalNode] RPL root not reachable yet
+00:08.813	ID:2	[INFO: NormalNode] RPL root not reachable yet
+00:10.715	ID:5	[WARN: Sinkhole  ] SINKHOLE ATTACK ACTIVE
+00:10.716	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+00:15.382	ID:1	[WARN: IDS-Sinkhole] IDS ALERT: SINKHOLE DETECTED node=fe80::205:5:5:5 advertised_rank=160 threshold=192
+00:15.383	ID:1	[WARN: IDS-Sinkhole] IDS ACTION: BLOCK sent to sinkhole fe80::205:5:5:5
+00:15.383	ID:1	[WARN: IDS-Sinkhole] IDS ACTION: sinkhole node isolated
+00:15.383	ID:1	[WARN: IDS-Sinkhole] IDS ACTION: RPL global repair triggered
+00:15.396	ID:5	[WARN: Sinkhole  ] MITIGATION: BLOCK received from IDS
+00:15.396	ID:5	[WARN: Sinkhole  ] MITIGATION: sinkhole poisoned and leaving DAG
+00:15.716	ID:5	[WARN: Sinkhole  ] SINKHOLE ATTACK STOPPED
+01:07.807	ID:4	[INFO: NormalNode] NORMAL TX seq=0 -> fd00::201:1:1:1
+01:07.858	ID:1	[INFO: IDS-Sinkhole] Received packet from fd00::204:4:4:4
+01:07.914	ID:4	[INFO: NormalNode] RESPONSE seq=0 latency_ms=107
+01:07.914	ID:4	[INFO: NormalNode] NORMAL METRIC tx=1 rx=1 missed=0
+01:08.292	ID:3	[INFO: NormalNode] NORMAL TX seq=0 -> fd00::201:1:1:1
+01:08.357	ID:1	[INFO: IDS-Sinkhole] Received packet from fd00::203:3:3:3
+01:08.407	ID:3	[INFO: NormalNode] RESPONSE seq=0 latency_ms=115
+01:08.407	ID:3	[INFO: NormalNode] NORMAL METRIC tx=1 rx=1 missed=0
+01:09.258	ID:2	[INFO: NormalNode] NORMAL TX seq=0 -> fd00::201:1:1:1
+01:09.302	ID:1	[INFO: IDS-Sinkhole] Received packet from fd00::202:2:2:2
+01:09.339	ID:2	[INFO: NormalNode] RESPONSE seq=0 latency_ms=81
+01:09.339	ID:2	[INFO: NormalNode] NORMAL METRIC tx=1 rx=1 missed=0
+02:06.960	ID:4	[INFO: NormalNode] NORMAL TX seq=1 -> fd00::201:1:1:1
+02:07.025	ID:1	[INFO: IDS-Sinkhole] Received packet from fd00::204:4:4:4
+02:07.063	ID:4	[INFO: NormalNode] RESPONSE seq=1 latency_ms=103
+02:07.063	ID:4	[INFO: NormalNode] NORMAL METRIC tx=2 rx=2 missed=0
+02:09.055	ID:3	[INFO: NormalNode] NORMAL TX seq=1 -> fd00::201:1:1:1
+02:09.095	ID:1	[INFO: IDS-Sinkhole] Received packet from fd00::203:3:3:3
+02:09.130	ID:3	[INFO: NormalNode] RESPONSE seq=1 latency_ms=75
+02:09.130	ID:3	[INFO: NormalNode] NORMAL METRIC tx=2 rx=2 missed=0
+02:09.157	ID:2	[INFO: NormalNode] NORMAL TX seq=1 -> fd00::201:1:1:1
+02:09.205	ID:1	[INFO: IDS-Sinkhole] Received packet from fd00::202:2:2:2
+02:09.261	ID:2	[INFO: NormalNode] RESPONSE seq=1 latency_ms=104
+02:09.261	ID:2	[INFO: NormalNode] NORMAL METRIC tx=2 rx=2 missed=0
+03:06.588	ID:4	[INFO: NormalNode] NORMAL TX seq=2 -> fd00::201:1:1:1
+03:06.667	ID:1	[INFO: IDS-Sinkhole] Received packet from fd00::204:4:4:4
+03:06.731	ID:4	[INFO: NormalNode] RESPONSE seq=2 latency_ms=143
+03:06.731	ID:4	[INFO: NormalNode] NORMAL METRIC tx=3 rx=3 missed=0
+03:08.091	ID:3	[INFO: NormalNode] NORMAL TX seq=2 -> fd00::201:1:1:1
+03:08.143	ID:1	[INFO: IDS-Sinkhole] Received packet from fd00::203:3:3:3
+03:08.159	ID:3	[INFO: NormalNode] RESPONSE seq=2 latency_ms=68
+03:08.159	ID:3	[INFO: NormalNode] NORMAL METRIC tx=3 rx=3 missed=0
+03:09.375	ID:2	[INFO: NormalNode] NORMAL TX seq=2 -> fd00::201:1:1:1
+03:09.448	ID:1	[INFO: IDS-Sinkhole] Received packet from fd00::202:2:2:2
+03:09.499	ID:2	[INFO: NormalNode] RESPONSE seq=2 latency_ms=124
+03:09.499	ID:2	[INFO: NormalNode] NORMAL METRIC tx=3 rx=3 missed=0
+04:06.067	ID:4	[INFO: NormalNode] NORMAL TX seq=3 -> fd00::201:1:1:1
+04:06.121	ID:1	[INFO: IDS-Sinkhole] Received packet from fd00::204:4:4:4
+04:06.184	ID:4	[INFO: NormalNode] RESPONSE seq=3 latency_ms=117
+04:06.184	ID:4	[INFO: NormalNode] NORMAL METRIC tx=4 rx=4 missed=0
+04:07.676	ID:3	[INFO: NormalNode] NORMAL TX seq=3 -> fd00::201:1:1:1
+04:07.718	ID:1	[INFO: IDS-Sinkhole] Received packet from fd00::203:3:3:3
+04:07.764	ID:3	[INFO: NormalNode] RESPONSE seq=3 latency_ms=88
+04:07.764	ID:3	[INFO: NormalNode] NORMAL METRIC tx=4 rx=4 missed=0
+04:10.183	ID:2	[INFO: NormalNode] NORMAL TX seq=3 -> fd00::201:1:1:1
+04:10.224	ID:1	[INFO: IDS-Sinkhole] Received packet from fd00::202:2:2:2
+04:10.243	ID:2	[INFO: NormalNode] RESPONSE seq=3 latency_ms=60
+04:10.243	ID:2	[INFO: NormalNode] NORMAL METRIC tx=4 rx=4 missed=0
+05:06.360	ID:4	[INFO: NormalNode] NORMAL TX seq=4 -> fd00::201:1:1:1
+05:06.422	ID:1	[INFO: IDS-Sinkhole] Received packet from fd00::204:4:4:4
+05:06.517	ID:4	[INFO: NormalNode] RESPONSE seq=4 latency_ms=157
+05:06.517	ID:4	[INFO: NormalNode] NORMAL METRIC tx=5 rx=5 missed=0
+05:07.317	ID:3	[INFO: NormalNode] NORMAL TX seq=4 -> fd00::201:1:1:1
+05:07.354	ID:1	[INFO: IDS-Sinkhole] Received packet from fd00::203:3:3:3
+05:07.408	ID:3	[INFO: NormalNode] RESPONSE seq=4 latency_ms=91
+05:07.408	ID:3	[INFO: NormalNode] NORMAL METRIC tx=5 rx=5 missed=0
+05:11.114	ID:2	[INFO: NormalNode] NORMAL TX seq=4 -> fd00::201:1:1:1
+05:11.137	ID:1	[INFO: IDS-Sinkhole] Received packet from fd00::202:2:2:2
+05:11.168	ID:2	[INFO: NormalNode] RESPONSE seq=4 latency_ms=54
+05:11.168	ID:2	[INFO: NormalNode] NORMAL METRIC tx=5 rx=5 missed=0
+06:06.549	ID:4	[INFO: NormalNode] NORMAL TX seq=5 -> fd00::201:1:1:1
+06:06.610	ID:1	[INFO: IDS-Sinkhole] Received packet from fd00::204:4:4:4
+06:06.651	ID:4	[INFO: NormalNode] RESPONSE seq=5 latency_ms=102
+06:06.651	ID:4	[INFO: NormalNode] NORMAL METRIC tx=6 rx=6 missed=0
+06:08.131	ID:3	[INFO: NormalNode] NORMAL TX seq=5 -> fd00::201:1:1:1
+06:08.165	ID:1	[INFO: IDS-Sinkhole] Received packet from fd00::203:3:3:3
+06:08.222	ID:3	[INFO: NormalNode] RESPONSE seq=5 latency_ms=91
+06:08.222	ID:3	[INFO: NormalNode] NORMAL METRIC tx=6 rx=6 missed=0
+06:12.089	ID:2	[INFO: NormalNode] NORMAL TX seq=5 -> fd00::201:1:1:1
+06:12.108	ID:1	[INFO: IDS-Sinkhole] Received packet from fd00::202:2:2:2
+06:12.121	ID:2	[INFO: NormalNode] RESPONSE seq=5 latency_ms=32
+06:12.121	ID:2	[INFO: NormalNode] NORMAL METRIC tx=6 rx=6 missed=0
+07:06.702	ID:4	[INFO: NormalNode] NORMAL TX seq=6 -> fd00::201:1:1:1
+07:06.765	ID:1	[INFO: IDS-Sinkhole] Received packet from fd00::204:4:4:4
+07:06.856	ID:4	[INFO: NormalNode] RESPONSE seq=6 latency_ms=154
+07:06.856	ID:4	[INFO: NormalNode] NORMAL METRIC tx=7 rx=7 missed=0
+07:08.914	ID:3	[INFO: NormalNode] NORMAL TX seq=6 -> fd00::201:1:1:1
+07:08.960	ID:1	[INFO: IDS-Sinkhole] Received packet from fd00::203:3:3:3
+07:09.025	ID:3	[INFO: NormalNode] RESPONSE seq=6 latency_ms=111
+07:09.025	ID:3	[INFO: NormalNode] NORMAL METRIC tx=7 rx=7 missed=0
+07:12.063	ID:2	[INFO: NormalNode] NORMAL TX seq=6 -> fd00::201:1:1:1
+07:12.106	ID:1	[INFO: IDS-Sinkhole] Received packet from fd00::202:2:2:2
+07:12.165	ID:2	[INFO: NormalNode] RESPONSE seq=6 latency_ms=102
+07:12.165	ID:2	[INFO: NormalNode] NORMAL METRIC tx=7 rx=7 missed=0
+08:06.507	ID:4	[INFO: NormalNode] NORMAL TX seq=7 -> fd00::201:1:1:1
+08:06.558	ID:1	[INFO: IDS-Sinkhole] Received packet from fd00::204:4:4:4
+08:06.585	ID:4	[INFO: NormalNode] RESPONSE seq=7 latency_ms=78
+08:06.585	ID:4	[INFO: NormalNode] NORMAL METRIC tx=8 rx=8 missed=0
+08:08.751	ID:3	[INFO: NormalNode] NORMAL TX seq=7 -> fd00::201:1:1:1
+08:08.793	ID:1	[INFO: IDS-Sinkhole] Received packet from fd00::203:3:3:3
+08:08.843	ID:3	[INFO: NormalNode] RESPONSE seq=7 latency_ms=92
+08:08.843	ID:3	[INFO: NormalNode] NORMAL METRIC tx=8 rx=8 missed=0
+08:12.829	ID:2	[INFO: NormalNode] NORMAL TX seq=7 -> fd00::201:1:1:1
+08:12.875	ID:1	[INFO: IDS-Sinkhole] Received packet from fd00::202:2:2:2
+08:12.946	ID:2	[INFO: NormalNode] RESPONSE seq=7 latency_ms=117
+08:12.946	ID:2	[INFO: NormalNode] NORMAL METRIC tx=8 rx=8 missed=0

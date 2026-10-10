@@ -1,0 +1,572 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
+import {
+  Activity,
+  AlertTriangle,
+  ShieldCheck,
+  Network,
+  Clock3,
+  Zap,
+  RefreshCw,
+  ShieldAlert
+} from "lucide-react";
+import {
+  ResponsiveContainer,
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend
+} from "recharts";
+import "./App.css";
+
+const API_URL = "http://localhost:5000/api";
+
+function App() {
+  const [summary, setSummary] = useState(null);
+  const [results, setResults] = useState([]);
+  const [alerts, setAlerts] = useState([]);
+  const [events, setEvents] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [backendOnline, setBackendOnline] = useState(false);
+  const [lastUpdated, setLastUpdated] = useState(null);
+  const [streamOnline, setStreamOnline] = useState(false);
+
+  const loadDashboard = async () => {
+    try {
+      setLoading(true);
+
+      const [
+        summaryResponse,
+        resultsResponse,
+        alertsResponse,
+        eventsResponse
+      ] = await Promise.all([
+        axios.get(`${API_URL}/summary`),
+        axios.get(`${API_URL}/results`),
+        axios.get(`${API_URL}/alerts`),
+        axios.get(`${API_URL}/events`)
+      ]);
+
+      setSummary(summaryResponse.data.summary);
+      setResults(resultsResponse.data.results);
+      setAlerts(alertsResponse.data.alerts);
+      setEvents(eventsResponse.data.events);
+      setBackendOnline(true);
+      setLastUpdated(new Date());
+    } catch (error) {
+      console.error("Dashboard API error:", error);
+      setBackendOnline(false);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    let eventSource;
+    let cancelled = false;
+
+    const initializeDashboard = async () => {
+      await loadDashboard();
+
+      if (cancelled) {
+        return;
+      }
+
+      eventSource = new EventSource(`${API_URL}/events/stream`);
+
+      eventSource.onopen = async () => {
+        setStreamOnline(true);
+
+        // Reconcile once after the SSE connection opens.
+        // This prevents losing an event that arrived between the
+        // initial REST request and the SSE connection.
+        try {
+          const response = await axios.get(`${API_URL}/events`);
+          setEvents(response.data.events);
+        } catch (error) {
+          console.error("Event refresh error:", error);
+        }
+      };
+
+      eventSource.onmessage = (message) => {
+        try {
+          const event = JSON.parse(message.data);
+
+          setEvents((previousEvents) => {
+            if (previousEvents.some((item) => item.id === event.id)) {
+              return previousEvents;
+            }
+
+            return [event, ...previousEvents].slice(0, 50);
+          });
+
+          setLastUpdated(new Date());
+        } catch (error) {
+          console.error("Invalid IDS SSE event:", error);
+        }
+      };
+
+      eventSource.onerror = () => {
+        setStreamOnline(false);
+      };
+    };
+
+    initializeDashboard();
+
+    return () => {
+      cancelled = true;
+
+      if (eventSource) {
+        eventSource.close();
+      }
+    };
+  }, []);
+
+  const floodingIDS = results.find(
+    (item) => item.scenario === "Flooding + IDS"
+  );
+
+  const sinkholeIDS = results.find(
+    (item) => item.scenario === "Sinkhole + IDS"
+  );
+
+  const chartData = results.map((item) => ({
+    name: item.scenario
+      .replace(" (No IDS)", "")
+      .replace(" + IDS", " IDS"),
+    pdr: item.pdr_percent,
+    latency: Number(item.avg_latency_ms?.toFixed(2) || 0)
+  }));
+
+  if (loading) {
+    return (
+      <div className="loading-screen">
+        <div className="loading-card">
+          <Activity size={34} />
+          <h2>Loading Secure IoT IDS</h2>
+          <p>Connecting to IDS backend...</p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="app">
+      <header className="topbar">
+        <div>
+          <div className="brand">
+            <ShieldCheck size={30} />
+            <div>
+              <h1>Secure IoT IDS</h1>
+              <span>6LoWPAN Network Security Dashboard</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="topbar-right">
+          <div className={`connection ${backendOnline ? "online" : "offline"}`}>
+            <span className="status-dot"></span>
+            {backendOnline ? "Backend Online" : "Backend Offline"}
+          </div>
+
+          <button className="refresh-btn" onClick={loadDashboard}>
+            <RefreshCw size={17} />
+            Refresh
+          </button>
+        </div>
+      </header>
+
+      <main className="dashboard">
+        <section className="hero">
+          <div>
+            <p className="eyebrow">INTRUSION DETECTION SYSTEM</p>
+            <h2>IoT Network Security Overview</h2>
+            <p className="hero-text">
+              Monitoring flooding and sinkhole attacks with lightweight IDS
+              detection and mitigation.
+            </p>
+          </div>
+
+          <div className="network-status">
+            <Network size={22} />
+            <div>
+              <span>Network Status</span>
+              <strong>Protected</strong>
+            </div>
+          </div>
+        </section>
+
+        <section className="stats-grid">
+          <StatCard
+            icon={<Network />}
+            title="Scenarios"
+            value={summary?.totalScenarios ?? 0}
+            subtitle="Experiments analyzed"
+          />
+
+          <StatCard
+            icon={<AlertTriangle />}
+            title="IDS Alerts"
+            value={summary?.totalIDSAlerts ?? 0}
+            subtitle="Attacks detected"
+            alert
+          />
+
+          <StatCard
+            icon={<Activity />}
+            title="Normal PDR"
+            value={`${summary?.normalPDR ?? 0}%`}
+            subtitle="Packet delivery ratio"
+          />
+
+          <StatCard
+            icon={<ShieldCheck />}
+            title="Protection"
+            value="ACTIVE"
+            subtitle="IDS mitigation enabled"
+            success
+          />
+        </section>
+
+        <section className="attack-cards">
+          <AttackCard
+            title="Flooding Attack"
+            icon={<Zap />}
+            detection={floodingIDS?.detection_time_ms}
+            mitigation={floodingIDS?.mitigation_time_ms}
+            packets={floodingIDS?.flood_packets}
+          />
+
+          <AttackCard
+            title="Sinkhole Attack"
+            icon={<ShieldAlert />}
+            detection={sinkholeIDS?.detection_time_ms}
+            mitigation={sinkholeIDS?.mitigation_time_ms}
+            packets={sinkholeIDS?.sinkhole_dio_packets}
+            sinkhole
+          />
+        </section>
+
+        <section className="panel topology-panel">
+          <div className="panel-header">
+            <div>
+              <h3>IoT Network Topology</h3>
+              <p>5-node Contiki / 6LoWPAN network with IDS monitoring</p>
+            </div>
+            <div className="topology-legend">
+              <span><i className="legend-dot normal"></i> Normal</span>
+              <span><i className="legend-dot root"></i> Root / IDS</span>
+              <span><i className="legend-dot blocked"></i> Blocked</span>
+            </div>
+          </div>
+
+          <div className="topology">
+            <div className="topology-line line-2"></div>
+            <div className="topology-line line-3"></div>
+            <div className="topology-line line-4"></div>
+            <div className="topology-line line-5"></div>
+
+            <div className="topology-node node-1 root-node">
+              <div className="node-circle">
+                <Network size={21} />
+              </div>
+              <strong>Mote 1</strong>
+              <span>ROOT / IDS</span>
+              <small>Protected</small>
+            </div>
+
+            <div className="topology-node node-2">
+              <div className="node-circle">
+                <Network size={19} />
+              </div>
+              <strong>Mote 2</strong>
+              <span>NORMAL NODE</span>
+              <small>Connected</small>
+            </div>
+
+            <div className="topology-node node-3">
+              <div className="node-circle">
+                <Network size={19} />
+              </div>
+              <strong>Mote 3</strong>
+              <span>NORMAL NODE</span>
+              <small>Connected</small>
+            </div>
+
+            <div className="topology-node node-4">
+              <div className="node-circle">
+                <Network size={19} />
+              </div>
+              <strong>Mote 4</strong>
+              <span>NORMAL NODE</span>
+              <small>Connected</small>
+            </div>
+
+            <div className="topology-node node-5 blocked-node">
+              <div className="node-circle">
+                <ShieldAlert size={20} />
+              </div>
+              <strong>Mote 5</strong>
+              <span>SINKHOLE ATTACKER</span>
+              <small>BLOCKED / ISOLATED</small>
+            </div>
+          </div>
+        </section>
+
+        <section className="panel">
+          <div className="panel-header">
+            <div>
+              <h3>Experiment Performance</h3>
+              <p>PDR and average network latency across scenarios</p>
+            </div>
+          </div>
+
+          <div className="chart-container">
+            <ResponsiveContainer width="100%" height={340}>
+              <BarChart data={chartData}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="pdr" name="PDR (%)" />
+                <Bar dataKey="latency" name="Latency (ms)" />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </section>
+
+        <section className="panel live-events-panel">
+          <div className="panel-header">
+            <div>
+              <h3>Live IDS Events</h3>
+              <p>Real-time Contiki IDS events via event bridge</p>
+            </div>
+
+            <div className={`live-indicator ${streamOnline ? "" : "reconnecting"}`}>
+              <span></span>
+              {streamOnline ? "LIVE" : "CONNECTING"}
+            </div>
+          </div>
+
+          <div className="live-events">
+            {events.length === 0 ? (
+              <div className="empty-state">
+                <ShieldCheck size={28} />
+                <p>No live IDS events received.</p>
+              </div>
+            ) : (
+              events.map((event) => (
+                <div className="live-event" key={event.id}>
+                  <div className="live-event-icon">
+                    <AlertTriangle size={19} />
+                  </div>
+
+                  <div className="live-event-main">
+                    <strong>
+                      {event.attackType} — Node {event.node}
+                    </strong>
+
+                    <span>
+                      {event.message || "IDS event received"}
+                    </span>
+
+                    <small>
+                      {new Date(event.timestamp).toLocaleTimeString()}
+                      {event.address ? ` • ${event.address}` : ""}
+                    </small>
+                  </div>
+
+                  <div className="live-event-status">
+                    <b>{event.status}</b>
+
+                    {event.detectionTimeMs !== null && (
+                      <span>
+                        Detection {Math.round(event.detectionTimeMs)} ms
+                      </span>
+                    )}
+
+                    {event.mitigationTimeMs !== null && (
+                      <span>
+                        Mitigation {Math.round(event.mitigationTimeMs)} ms
+                      </span>
+                    )}
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
+        </section>
+
+        <section className="bottom-grid">
+          <section className="panel">
+            <div className="panel-header">
+              <div>
+                <h3>IDS Alerts</h3>
+                <p>Detected attack scenarios</p>
+              </div>
+            </div>
+
+            <div className="alerts-list">
+              {alerts.length === 0 ? (
+                <div className="empty-state">
+                  <ShieldCheck size={28} />
+                  <p>No IDS alerts recorded.</p>
+                </div>
+              ) : (
+                alerts.map((alert) => (
+                  <div className="alert-row" key={alert.scenario}>
+                    <div className="alert-icon">
+                      <AlertTriangle size={20} />
+                    </div>
+
+                    <div className="alert-info">
+                      <strong>{alert.scenario}</strong>
+                      <span>{alert.attackType} attack detected</span>
+                    </div>
+
+                    <div className="alert-metrics">
+                      <span>
+                        Detection{" "}
+                        <strong>
+                          {Math.round(alert.detectionTimeMs)} ms
+                        </strong>
+                      </span>
+                      <span>
+                        Mitigation{" "}
+                        <strong>
+                          {Math.round(alert.mitigationTimeMs)} ms
+                        </strong>
+                      </span>
+                    </div>
+                  </div>
+                ))
+              )}
+            </div>
+          </section>
+
+          <section className="panel">
+            <div className="panel-header">
+              <div>
+                <h3>System Metrics</h3>
+                <p>Current analyzed performance</p>
+              </div>
+            </div>
+
+            <div className="metric-list">
+              <Metric
+                icon={<Clock3 />}
+                label="Flooding detection"
+                value={`${Math.round(
+                  summary?.floodingDetectionMs ?? 0
+                )} ms`}
+              />
+
+              <Metric
+                icon={<ShieldCheck />}
+                label="Flooding mitigation"
+                value={`${Math.round(
+                  summary?.floodingMitigationMs ?? 0
+                )} ms`}
+              />
+
+              <Metric
+                icon={<Clock3 />}
+                label="Sinkhole detection"
+                value={`${Math.round(
+                  summary?.sinkholeDetectionMs ?? 0
+                )} ms`}
+              />
+
+              <Metric
+                icon={<ShieldCheck />}
+                label="Sinkhole mitigation"
+                value={`${Math.round(
+                  summary?.sinkholeMitigationMs ?? 0
+                )} ms`}
+              />
+            </div>
+          </section>
+        </section>
+
+        <footer>
+          <span>Secure IoT Network IDS</span>
+          <span>
+            {lastUpdated
+              ? `Last updated ${lastUpdated.toLocaleTimeString()}`
+              : ""}
+          </span>
+        </footer>
+      </main>
+    </div>
+  );
+}
+
+function StatCard({ icon, title, value, subtitle, alert, success }) {
+  return (
+    <div className={`stat-card ${alert ? "alert-card" : ""} ${success ? "success-card" : ""}`}>
+      <div className="stat-icon">{icon}</div>
+      <div>
+        <span className="stat-title">{title}</span>
+        <strong>{value}</strong>
+        <small>{subtitle}</small>
+      </div>
+    </div>
+  );
+}
+
+function AttackCard({
+  title,
+  icon,
+  detection,
+  mitigation,
+  packets,
+  sinkhole
+}) {
+  return (
+    <div className="attack-card">
+      <div className="attack-header">
+        <div className={`attack-icon ${sinkhole ? "sinkhole" : ""}`}>
+          {icon}
+        </div>
+        <div>
+          <span>ATTACK MONITOR</span>
+          <h3>{title}</h3>
+        </div>
+        <span className="blocked">MITIGATED</span>
+      </div>
+
+      <div className="attack-metrics">
+        <div>
+          <span>Detection</span>
+          <strong>{Math.round(detection ?? 0)} ms</strong>
+        </div>
+
+        <div>
+          <span>Mitigation</span>
+          <strong>{Math.round(mitigation ?? 0)} ms</strong>
+        </div>
+
+        <div>
+          <span>{sinkhole ? "DIO observed" : "Packets observed"}</span>
+          <strong>{packets ?? 0}</strong>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Metric({ icon, label, value }) {
+  return (
+    <div className="metric-row">
+      <div className="metric-icon">{icon}</div>
+      <span>{label}</span>
+      <strong>{value}</strong>
+    </div>
+  );
+}
+
+export default App;

@@ -1,0 +1,1142 @@
+import { useEffect, useMemo, useState } from "react";
+import axios from "axios";
+import {
+  Activity,
+  AlertTriangle,
+  ShieldCheck,
+  Network,
+  Clock3,
+  Zap,
+  RefreshCw,
+  ShieldAlert,
+  CheckCircle2,
+  ArrowDownRight,
+  Trash2
+} from "lucide-react";
+import {
+  ResponsiveContainer,
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend
+} from "recharts";
+import "./App.css";
+
+const API_URL = "http://localhost:5000/api";
+const LIVE_RUN_WINDOW_MS = 30 * 1000;
+
+const formatMs = (value) => {
+  if (value === null || value === undefined || Number.isNaN(Number(value))) {
+    return "—";
+  }
+
+  return `${Math.round(Number(value))} ms`;
+};
+
+const formatNumber = (value) => {
+  if (value === null || value === undefined || Number.isNaN(Number(value))) {
+    return "—";
+  }
+
+  return Number(value).toLocaleString();
+};
+
+const formatPercent = (value) => {
+  if (value === null || value === undefined || Number.isNaN(Number(value))) {
+    return "—";
+  }
+
+  return `${Number(value).toFixed(1)}%`;
+};
+
+const formatSimulationTime = (value) => {
+  if (value === null || value === undefined || Number.isNaN(Number(value))) {
+    return "";
+  }
+
+  const totalSeconds = Math.floor(Number(value) / 1000);
+  const milliseconds = Number(value) % 1000;
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+
+  const pad = (number, width) => String(number).padStart(width, "0");
+
+  return `${pad(minutes, 2)}:${pad(seconds, 2)}.${pad(milliseconds, 3)}`;
+};
+
+const findScenario = (results, attack, withIDS) =>
+  results.find((item) => {
+    const scenario = String(item.scenario || "").toLowerCase();
+    const matchesAttack = scenario.includes(attack.toLowerCase());
+
+    if (withIDS) {
+      return matchesAttack && scenario.includes("+ ids");
+    }
+
+    return (
+      matchesAttack &&
+      (scenario.includes("no ids") || scenario.includes("(no ids)"))
+    );
+  });
+
+const getLatestAttackRun = (allEvents, attackType) => {
+  const attackEvents = allEvents
+    .filter(
+      (event) =>
+        String(event.attackType || "").toLowerCase() ===
+        attackType.toLowerCase()
+    )
+    .filter((event) => event.timestamp);
+
+  if (attackEvents.length === 0) {
+    return [];
+  }
+
+  const latestTimestamp = Math.max(
+    ...attackEvents.map((event) => new Date(event.timestamp).getTime())
+  );
+
+  const runEvents = attackEvents.filter(
+    (event) =>
+      latestTimestamp - new Date(event.timestamp).getTime() <=
+      LIVE_RUN_WINDOW_MS
+  );
+
+  const latestByStatus = new Map();
+
+  runEvents.forEach((event) => {
+    const existing = latestByStatus.get(event.status);
+
+    if (
+      !existing ||
+      new Date(event.timestamp).getTime() >
+        new Date(existing.timestamp).getTime()
+    ) {
+      latestByStatus.set(event.status, event);
+    }
+  });
+
+  return [...latestByStatus.values()].sort(
+    (a, b) =>
+      new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime()
+  );
+};
+
+const getTopologyState = (floodingEvents, sinkholeEvents) => {
+  const latestFlooding = floodingEvents[floodingEvents.length - 1] || null;
+  const latestSinkhole = sinkholeEvents[sinkholeEvents.length - 1] || null;
+
+  const latest = [latestFlooding, latestSinkhole]
+    .filter(Boolean)
+    .sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime())[0] || null;
+
+  if (!latest) {
+    return {
+      type: "none",
+      className: "normal",
+      title: "MONITORED NODE",
+      subtitle: "Normal / Ready",
+      detail: "No recent attack event",
+      state: "IDLE",
+      timestamp: null
+    };
+  }
+
+  const attackType = String(latest.attackType || "").toLowerCase();
+  const status = String(latest.status || "").toUpperCase();
+  const type = attackType === "sinkhole" ? "sinkhole" : "flooding";
+
+  if (type === "sinkhole") {
+    if (status === "ATTACK_ACTIVE") {
+      return {
+        type,
+        className: "sinkhole active",
+        title: "SINKHOLE ATTACKER",
+        subtitle: "Attack Active",
+        detail: "Mote 5 advertising a false route",
+        state: "ACTIVE",
+        timestamp: latest.timestamp
+      };
+    }
+
+    if (["DETECTED", "BLOCK_SENT", "RPL_REPAIR"].includes(status)) {
+      return {
+        type,
+        className: "sinkhole blocking",
+        title: "SINKHOLE ATTACKER",
+        subtitle: status === "RPL_REPAIR" ? "RPL REPAIR" : "IDS BLOCKING",
+        detail: "Mote 5 under IDS response",
+        state: "BLOCKING",
+        timestamp: latest.timestamp
+      };
+    }
+
+    return {
+      type,
+      className: "sinkhole mitigated",
+      title: "SINKHOLE ATTACKER",
+      subtitle: "Blocked / Isolated",
+      detail: "Poisoned and removed from DAG",
+      state: "MITIGATED",
+      timestamp: latest.timestamp
+    };
+  }
+
+  if (status === "DETECTED" || status === "ATTACK_ACTIVE") {
+    return {
+      type,
+      className: "flooding active",
+      title: "FLOODING ATTACKER",
+      subtitle: status === "ATTACK_ACTIVE" ? "Attack Active" : "IDS Detecting",
+      detail: "Mote 5 generating high-rate traffic",
+      state: status === "ATTACK_ACTIVE" ? "ACTIVE" : "DETECTED",
+      timestamp: latest.timestamp
+    };
+  }
+
+  if (status === "BLOCK_SENT") {
+    return {
+      type,
+      className: "flooding blocking",
+      title: "FLOODING ATTACKER",
+      subtitle: "IDS Blocking",
+      detail: "Source blacklisted; BLOCK sent",
+      state: "BLOCKING",
+      timestamp: latest.timestamp
+    };
+  }
+
+  return {
+    type,
+    className: "flooding mitigated",
+    title: "FLOODING ATTACKER",
+    subtitle: "Blocked / Mitigated",
+    detail: "Attack traffic stopped",
+    state: "MITIGATED",
+    timestamp: latest.timestamp
+  };
+};
+
+const reductionPercent = (before, after) => {
+  if (
+    before === null ||
+    before === undefined ||
+    after === null ||
+    after === undefined ||
+    Number(before) === 0
+  ) {
+    return null;
+  }
+
+  return ((Number(before) - Number(after)) / Number(before)) * 100;
+};
+
+function App() {
+  const [summary, setSummary] = useState(null);
+  const [results, setResults] = useState([]);
+  const [alerts, setAlerts] = useState([]);
+  const [events, setEvents] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [backendOnline, setBackendOnline] = useState(false);
+  const [lastUpdated, setLastUpdated] = useState(null);
+  const [streamOnline, setStreamOnline] = useState(false);
+  const [clearMarks, setClearMarks] = useState(() => {
+    try {
+      return JSON.parse(localStorage.getItem("secureIoTLiveClearMarks") || "{}");
+    } catch {
+      return {};
+    }
+  });
+
+  const getClearMark = (attackType) => Number(clearMarks[attackType] || 0);
+
+  const clearLiveEvents = (attackType) => {
+    const mark = Date.now();
+    const next = { ...clearMarks, [attackType]: mark };
+    setClearMarks(next);
+    localStorage.setItem("secureIoTLiveClearMarks", JSON.stringify(next));
+    setLastUpdated(new Date());
+  };
+
+  const clearAllLiveEvents = () => {
+    const mark = Date.now();
+    const next = { Flooding: mark, Sinkhole: mark };
+    setClearMarks(next);
+    localStorage.setItem("secureIoTLiveClearMarks", JSON.stringify(next));
+    setLastUpdated(new Date());
+  };
+
+  const loadDashboard = async () => {
+    try {
+      setLoading(true);
+
+      const [
+        summaryResponse,
+        resultsResponse,
+        alertsResponse,
+        eventsResponse
+      ] = await Promise.all([
+        axios.get(`${API_URL}/summary`),
+        axios.get(`${API_URL}/results`),
+        axios.get(`${API_URL}/alerts`),
+        axios.get(`${API_URL}/events`)
+      ]);
+
+      setSummary(summaryResponse.data.summary);
+      setResults(resultsResponse.data.results);
+      setAlerts(alertsResponse.data.alerts);
+      setEvents(eventsResponse.data.events);
+      setBackendOnline(true);
+      setLastUpdated(new Date());
+    } catch (error) {
+      console.error("Dashboard API error:", error);
+      setBackendOnline(false);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    let eventSource;
+    let cancelled = false;
+
+    const initializeDashboard = async () => {
+      await loadDashboard();
+
+      if (cancelled) {
+        return;
+      }
+
+      eventSource = new EventSource(`${API_URL}/events/stream`);
+
+      eventSource.onopen = async () => {
+        setStreamOnline(true);
+
+        try {
+          const response = await axios.get(`${API_URL}/events`);
+          setEvents(response.data.events);
+        } catch (error) {
+          console.error("Event refresh error:", error);
+        }
+      };
+
+      eventSource.onmessage = (message) => {
+        try {
+          const event = JSON.parse(message.data);
+
+          setEvents((previousEvents) => {
+            if (previousEvents.some((item) => item.id === event.id)) {
+              return previousEvents;
+            }
+
+            return [event, ...previousEvents].slice(0, 50);
+          });
+
+          setLastUpdated(new Date());
+        } catch (error) {
+          console.error("Invalid IDS SSE event:", error);
+        }
+      };
+
+      eventSource.onerror = () => {
+        setStreamOnline(false);
+      };
+    };
+
+    initializeDashboard();
+
+    return () => {
+      cancelled = true;
+
+      if (eventSource) {
+        eventSource.close();
+      }
+    };
+  }, []);
+
+  const floodingIDS = findScenario(results, "flooding", true);
+  const floodingNoIDS = findScenario(results, "flooding", false);
+  const sinkholeIDS = findScenario(results, "sinkhole", true);
+  const sinkholeNoIDS = findScenario(results, "sinkhole", false);
+
+  const floodingLiveEvents = useMemo(
+    () =>
+      getLatestAttackRun(
+        events.filter(
+          (event) => new Date(event.timestamp).getTime() > getClearMark("Flooding")
+        ),
+        "Flooding"
+      ),
+    [events, clearMarks]
+  );
+
+  const sinkholeLiveEvents = useMemo(
+    () =>
+      getLatestAttackRun(
+        events.filter(
+          (event) => new Date(event.timestamp).getTime() > getClearMark("Sinkhole")
+        ),
+        "Sinkhole"
+      ),
+    [events, clearMarks]
+  );
+
+  const topologyState = useMemo(
+    () => getTopologyState(floodingLiveEvents, sinkholeLiveEvents),
+    [floodingLiveEvents, sinkholeLiveEvents]
+  );
+
+  const floodingReduction = reductionPercent(
+    floodingNoIDS?.flood_packets,
+    floodingIDS?.flood_packets
+  );
+
+  const sinkholeReduction = reductionPercent(
+    sinkholeNoIDS?.sinkhole_dio_packets,
+    sinkholeIDS?.sinkhole_dio_packets
+  );
+
+  const pdrData = results.map((item) => ({
+    name: String(item.scenario || "")
+      .replace(" (No IDS)", " Baseline")
+      .replace(" + IDS", " + IDS")
+      .replace("Flooding Baseline", "Flood No IDS")
+      .replace("Sinkhole Baseline", "Sinkhole No IDS")
+      .replace("Flooding + IDS", "Flood + IDS")
+      .replace("Sinkhole + IDS", "Sinkhole + IDS"),
+    pdr: Number(item.pdr_percent || 0)
+  }));
+
+  const latencyData = results.map((item) => ({
+    name: String(item.scenario || "")
+      .replace(" (No IDS)", " Baseline")
+      .replace("Flooding Baseline", "Flood No IDS")
+      .replace("Sinkhole Baseline", "Sinkhole No IDS"),
+    latency: Number(Number(item.avg_latency_ms || 0).toFixed(2))
+  }));
+
+  if (loading) {
+    return (
+      <div className="loading-screen">
+        <div className="loading-card">
+          <Activity size={34} />
+          <h2>Loading Secure IoT IDS</h2>
+          <p>Connecting to IDS backend...</p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="app">
+      <header className="topbar">
+        <div className="brand">
+          <ShieldCheck size={30} />
+          <div>
+            <h1>Secure IoT IDS</h1>
+            <span>6LoWPAN Network Security Dashboard</span>
+          </div>
+        </div>
+
+        <div className="topbar-right">
+          <div className={`connection ${backendOnline ? "online" : "offline"}`}>
+            <span className="status-dot"></span>
+            {backendOnline ? "Backend Online" : "Backend Offline"}
+          </div>
+
+          <div className={`stream-badge ${streamOnline ? "online" : "reconnecting"}`}>
+            <span></span>
+            {streamOnline ? "LIVE STREAM" : "CONNECTING"}
+          </div>
+
+          <button className="refresh-btn" onClick={loadDashboard}>
+            <RefreshCw size={17} />
+            Refresh
+          </button>
+        </div>
+      </header>
+
+      <main className="dashboard">
+        <section className="hero">
+          <div>
+            <p className="eyebrow">INTRUSION DETECTION SYSTEM</p>
+            <h2>IoT Network Security Overview</h2>
+            <p className="hero-text">
+              Monitoring flooding and sinkhole attacks with lightweight IDS
+              detection, isolation and mitigation.
+            </p>
+          </div>
+
+          <div className="network-status">
+            <Network size={22} />
+            <div>
+              <span>Network Status</span>
+              <strong>Protected</strong>
+            </div>
+          </div>
+        </section>
+
+        <section className="stats-grid">
+          <StatCard
+            icon={<Network />}
+            title="Scenarios"
+            value={summary?.totalScenarios ?? 0}
+            subtitle="Experiments analyzed"
+          />
+
+          <StatCard
+            icon={<AlertTriangle />}
+            title="IDS Alerts"
+            value={summary?.totalIDSAlerts ?? 0}
+            subtitle="Attack scenarios detected"
+            alert
+          />
+
+          <StatCard
+            icon={<Activity />}
+            title="Normal PDR"
+            value={`${summary?.normalPDR ?? 0}%`}
+            subtitle="Packet delivery ratio"
+          />
+
+          <StatCard
+            icon={<ShieldCheck />}
+            title="Protection"
+            value="ACTIVE"
+            subtitle="IDS mitigation enabled"
+            success
+          />
+        </section>
+
+        <section className="attack-cards">
+          <AttackCard
+            title="Flooding Attack"
+            subtitle="High-rate packet injection"
+            icon={<Zap />}
+            detection={floodingIDS?.detection_time_ms}
+            mitigation={floodingIDS?.mitigation_time_ms}
+            packets={floodingIDS?.flood_packets}
+          />
+
+          <AttackCard
+            title="Sinkhole Attack"
+            subtitle="False-rank route poisoning"
+            icon={<ShieldAlert />}
+            detection={sinkholeIDS?.detection_time_ms}
+            mitigation={sinkholeIDS?.mitigation_time_ms}
+            packets={sinkholeIDS?.sinkhole_dio_packets}
+            sinkhole
+          />
+        </section>
+
+        <section className="panel effectiveness-panel">
+          <div className="panel-header">
+            <div>
+              <div className="section-kicker">SECURITY IMPACT</div>
+              <h3>Before IDS vs After IDS</h3>
+              <p>
+                Compare the measured baseline network behavior with the
+                protected IDS configuration.
+              </p>
+            </div>
+            <div className="comparison-badge">
+              <ShieldCheck size={16} />
+              Measured results
+            </div>
+          </div>
+
+          <div className="comparison-grid">
+            <ComparisonCard
+              type="Flooding"
+              icon={<Zap />}
+              before={floodingNoIDS}
+              after={floodingIDS}
+              primaryLabel="Flood packets"
+              primaryBefore={floodingNoIDS?.flood_packets}
+              primaryAfter={floodingIDS?.flood_packets}
+              reduction={floodingReduction}
+              primaryNote="Observed attack traffic"
+            />
+
+            <ComparisonCard
+              type="Sinkhole"
+              icon={<ShieldAlert />}
+              before={sinkholeNoIDS}
+              after={sinkholeIDS}
+              primaryLabel="DIO packets"
+              primaryBefore={sinkholeNoIDS?.sinkhole_dio_packets}
+              primaryAfter={sinkholeIDS?.sinkhole_dio_packets}
+              reduction={sinkholeReduction}
+              primaryNote="Observed sinkhole advertisements"
+              sinkhole
+            />
+          </div>
+        </section>
+
+        <section className="panel performance-panel">
+          <div className="panel-header">
+            <div>
+              <div className="section-kicker">NETWORK PERFORMANCE</div>
+              <h3>Delivery and latency</h3>
+              <p>
+                Separate scales make PDR and latency easier to read and compare.
+              </p>
+            </div>
+          </div>
+
+          <div className="performance-grid">
+            <div className="chart-card">
+              <div className="chart-card-header">
+                <strong>Packet Delivery Ratio</strong>
+                <span>%</span>
+              </div>
+              <ResponsiveContainer width="100%" height={280}>
+                <BarChart data={pdrData}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#1b3048" />
+                  <XAxis
+                    dataKey="name"
+                    tick={{ fill: "#7f91a8", fontSize: 11 }}
+                    axisLine={{ stroke: "#29415a" }}
+                    tickLine={false}
+                  />
+                  <YAxis
+                    domain={[0, 100]}
+                    tick={{ fill: "#7f91a8", fontSize: 11 }}
+                    axisLine={{ stroke: "#29415a" }}
+                    tickLine={false}
+                  />
+                  <Tooltip
+                    contentStyle={{
+                      background: "#0c1827",
+                      border: "1px solid #29415a",
+                      borderRadius: "8px",
+                      color: "#e8eef7"
+                    }}
+                  />
+                  <Bar
+                    dataKey="pdr"
+                    name="PDR (%)"
+                    fill="#51b6ff"
+                    radius={[5, 5, 0, 0]}
+                  />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+
+            <div className="chart-card">
+              <div className="chart-card-header">
+                <strong>Average Network Latency</strong>
+                <span>ms</span>
+              </div>
+              <ResponsiveContainer width="100%" height={280}>
+                <BarChart data={latencyData}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#1b3048" />
+                  <XAxis
+                    dataKey="name"
+                    tick={{ fill: "#7f91a8", fontSize: 11 }}
+                    axisLine={{ stroke: "#29415a" }}
+                    tickLine={false}
+                  />
+                  <YAxis
+                    tick={{ fill: "#7f91a8", fontSize: 11 }}
+                    axisLine={{ stroke: "#29415a" }}
+                    tickLine={false}
+                  />
+                  <Tooltip
+                    contentStyle={{
+                      background: "#0c1827",
+                      border: "1px solid #29415a",
+                      borderRadius: "8px",
+                      color: "#e8eef7"
+                    }}
+                  />
+                  <Bar
+                    dataKey="latency"
+                    name="Latency (ms)"
+                    fill="#9b7cff"
+                    radius={[5, 5, 0, 0]}
+                  />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+          </div>
+        </section>
+
+        <section className="panel topology-panel">
+          <div className="panel-header topology-header">
+            <div>
+              <div className="section-kicker">NETWORK VIEW</div>
+              <h3>IoT Network Topology</h3>
+              <p>5-node Contiki / 6LoWPAN network with live IDS state from SSE events</p>
+            </div>
+
+            <div className={`topology-live-state ${topologyState.className}`}>
+              <span className="topology-live-dot"></span>
+              <div>
+                <small>{streamOnline ? "LIVE TOPOLOGY STATE" : "LAST KNOWN STATE"}</small>
+                <strong>
+                  {topologyState.type === "none"
+                    ? "NO RECENT ATTACK"
+                    : `${topologyState.type === "sinkhole" ? "SINKHOLE" : "FLOODING"} • ${topologyState.state}`}
+                </strong>
+              </div>
+            </div>
+          </div>
+
+          <div className="topology-legend">
+            <span><i className="legend-dot normal"></i> Normal</span>
+            <span><i className="legend-dot root"></i> Root / IDS</span>
+            <span><i className="legend-dot attack-live"></i> Live attacker</span>
+            <span><i className="legend-dot mitigated"></i> Mitigated</span>
+          </div>
+
+          <div className={`topology topology-${topologyState.type}`}>
+            <div className="topology-line line-2"></div>
+            <div className="topology-line line-3"></div>
+            <div className="topology-line line-4"></div>
+            <div className={`topology-line line-5 ${topologyState.type !== "none" ? "attacker-link" : ""}`}></div>
+
+            <div className="topology-node node-1 root-node">
+              <div className="node-circle">
+                <Network size={21} />
+              </div>
+              <strong>Mote 1</strong>
+              <span>ROOT / IDS</span>
+              <small>Protected</small>
+            </div>
+
+            <div className="topology-node node-2">
+              <div className="node-circle">
+                <Network size={19} />
+              </div>
+              <strong>Mote 2</strong>
+              <span>NORMAL NODE</span>
+              <small>Connected</small>
+            </div>
+
+            <div className="topology-node node-3">
+              <div className="node-circle">
+                <Network size={19} />
+              </div>
+              <strong>Mote 3</strong>
+              <span>NORMAL NODE</span>
+              <small>Connected</small>
+            </div>
+
+            <div className="topology-node node-4">
+              <div className="node-circle">
+                <Network size={19} />
+              </div>
+              <strong>Mote 4</strong>
+              <span>NORMAL NODE</span>
+              <small>Connected</small>
+            </div>
+
+            <div className={`topology-node node-5 dynamic-node ${topologyState.className}`}>
+              <div className="node-circle">
+                {topologyState.type === "sinkhole" ? (
+                  <ShieldAlert size={20} />
+                ) : topologyState.type === "flooding" ? (
+                  <Zap size={20} />
+                ) : (
+                  <Network size={20} />
+                )}
+              </div>
+              <strong>Mote 5</strong>
+              <span>{topologyState.title}</span>
+              <small>{topologyState.subtitle}</small>
+              <em>{topologyState.detail}</em>
+            </div>
+
+            <div className="topology-state-label">
+              <span>{topologyState.state}</span>
+              <small>
+                {topologyState.timestamp
+                  ? new Date(topologyState.timestamp).toLocaleTimeString()
+                  : "Awaiting live IDS events"}
+              </small>
+            </div>
+          </div>
+        </section>
+
+        <section className="live-section">
+          <div className="section-heading-row">
+            <div>
+              <div className="section-kicker">REAL-TIME MONITOR</div>
+              <h3>Live IDS Events</h3>
+              <p>Flooding and sinkhole attack streams are separated for clarity.</p>
+            </div>
+
+            <div className="live-section-actions">
+              <div className={`live-indicator ${streamOnline ? "" : "reconnecting"}`}>
+                <span></span>
+                {streamOnline ? "SSE LIVE" : "CONNECTING"}
+              </div>
+              <button
+                className="clear-live-all-btn"
+                type="button"
+                onClick={clearAllLiveEvents}
+                title="Hide current Flooding and Sinkhole live event history"
+              >
+                <Trash2 size={13} />
+                Clear All
+              </button>
+            </div>
+          </div>
+
+          <div className="live-events-grid">
+            <LiveAttackPanel
+              attackType="Flooding"
+              icon={<Zap size={20} />}
+              events={floodingLiveEvents}
+              onClear={() => clearLiveEvents("Flooding")}
+              emptyText="No Flooding events in the recent stream."
+            />
+
+            <LiveAttackPanel
+              attackType="Sinkhole"
+              icon={<ShieldAlert size={20} />}
+              events={sinkholeLiveEvents}
+              onClear={() => clearLiveEvents("Sinkhole")}
+              sinkhole
+              emptyText="No Sinkhole events in the recent stream."
+            />
+          </div>
+        </section>
+
+        <section className="bottom-grid">
+          <section className="panel">
+            <div className="panel-header">
+              <div>
+                <div className="section-kicker">DETECTION SUMMARY</div>
+                <h3>IDS Alerts</h3>
+                <p>Measured attack scenarios detected by the IDS</p>
+              </div>
+            </div>
+
+            <div className="alerts-list">
+              {alerts.length === 0 ? (
+                <div className="empty-state">
+                  <ShieldCheck size={28} />
+                  <p>No IDS alerts recorded.</p>
+                </div>
+              ) : (
+                alerts.map((alert) => (
+                  <div className="alert-row" key={alert.scenario}>
+                    <div className="alert-icon">
+                      <AlertTriangle size={20} />
+                    </div>
+
+                    <div className="alert-info">
+                      <strong>{alert.scenario}</strong>
+                      <span>{alert.attackType} attack detected</span>
+                    </div>
+
+                    <div className="alert-metrics">
+                      <span>
+                        Detection{" "}
+                        <strong>{Math.round(alert.detectionTimeMs)} ms</strong>
+                      </span>
+                      <span>
+                        Mitigation{" "}
+                        <strong>{Math.round(alert.mitigationTimeMs)} ms</strong>
+                      </span>
+                    </div>
+                  </div>
+                ))
+              )}
+            </div>
+          </section>
+
+          <section className="panel">
+            <div className="panel-header">
+              <div>
+                <div className="section-kicker">RESPONSE METRICS</div>
+                <h3>System Metrics</h3>
+                <p>Current analyzed IDS performance</p>
+              </div>
+            </div>
+
+            <div className="metric-list">
+              <Metric
+                icon={<Clock3 />}
+                label="Flooding detection"
+                value={formatMs(summary?.floodingDetectionMs)}
+              />
+
+              <Metric
+                icon={<ShieldCheck />}
+                label="Flooding mitigation"
+                value={formatMs(summary?.floodingMitigationMs)}
+              />
+
+              <Metric
+                icon={<Clock3 />}
+                label="Sinkhole detection"
+                value={formatMs(summary?.sinkholeDetectionMs)}
+              />
+
+              <Metric
+                icon={<ShieldCheck />}
+                label="Sinkhole mitigation"
+                value={formatMs(summary?.sinkholeMitigationMs)}
+              />
+            </div>
+          </section>
+        </section>
+
+        <footer>
+          <span>Secure IoT Network IDS</span>
+          <span>
+            {lastUpdated ? `Last updated ${lastUpdated.toLocaleTimeString()}` : ""}
+          </span>
+        </footer>
+      </main>
+    </div>
+  );
+}
+
+function StatCard({ icon, title, value, subtitle, alert, success }) {
+  return (
+    <div
+      className={`stat-card ${alert ? "alert-card" : ""} ${
+        success ? "success-card" : ""
+      }`}
+    >
+      <div className="stat-icon">{icon}</div>
+      <div>
+        <span className="stat-title">{title}</span>
+        <strong>{value}</strong>
+        <small>{subtitle}</small>
+      </div>
+    </div>
+  );
+}
+
+function AttackCard({
+  title,
+  subtitle,
+  icon,
+  detection,
+  mitigation,
+  packets,
+  sinkhole
+}) {
+  return (
+    <div className={`attack-card ${sinkhole ? "sinkhole-card" : ""}`}>
+      <div className="attack-header">
+        <div className={`attack-icon ${sinkhole ? "sinkhole" : ""}`}>{icon}</div>
+
+        <div className="attack-title-block">
+          <span>ATTACK MONITOR</span>
+          <h3>{title}</h3>
+          <p>{subtitle}</p>
+        </div>
+
+        <span className="blocked">
+          <CheckCircle2 size={13} />
+          MITIGATED
+        </span>
+      </div>
+
+      <div className="attack-metrics">
+        <div>
+          <span>Detection</span>
+          <strong>{formatMs(detection)}</strong>
+        </div>
+
+        <div>
+          <span>Mitigation</span>
+          <strong>{formatMs(mitigation)}</strong>
+        </div>
+
+        <div>
+          <span>{sinkhole ? "DIO observed" : "Packets observed"}</span>
+          <strong>{formatNumber(packets)}</strong>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ComparisonCard({
+  type,
+  icon,
+  before,
+  after,
+  primaryLabel,
+  primaryBefore,
+  primaryAfter,
+  reduction,
+  primaryNote,
+  sinkhole
+}) {
+  return (
+    <article className={`comparison-card ${sinkhole ? "sinkhole" : ""}`}>
+      <div className="comparison-card-header">
+        <div className={`comparison-icon ${sinkhole ? "sinkhole" : ""}`}>
+          {icon}
+        </div>
+        <div>
+          <span>ATTACK COMPARISON</span>
+          <h4>{type}</h4>
+        </div>
+        <span className="comparison-status">IDS VERIFIED</span>
+      </div>
+
+      <div className="headline-comparison">
+        <div className="big-number-block">
+          <span>Before IDS</span>
+          <strong>{formatNumber(primaryBefore)}</strong>
+          <small>{primaryLabel}</small>
+        </div>
+
+        <div className="comparison-arrow">
+          <ArrowDownRight size={24} />
+        </div>
+
+        <div className="big-number-block after">
+          <span>After IDS</span>
+          <strong>{formatNumber(primaryAfter)}</strong>
+          <small>{primaryLabel}</small>
+        </div>
+      </div>
+
+      <div className="reduction-row">
+        <div className="reduction-badge">
+          <ArrowDownRight size={16} />
+          {reduction === null ? "Reduction unavailable" : `${reduction.toFixed(2)}% reduction`}
+        </div>
+        <span>{primaryNote}</span>
+      </div>
+
+      <div className="comparison-table">
+        <ComparisonMetric
+          label="PDR"
+          before={formatPercent(before?.pdr_percent)}
+          after={formatPercent(after?.pdr_percent)}
+        />
+
+        <ComparisonMetric
+          label="Average latency"
+          before={formatMs(before?.avg_latency_ms)}
+          after={formatMs(after?.avg_latency_ms)}
+        />
+
+        <ComparisonMetric
+          label="Detection"
+          before="—"
+          after={formatMs(after?.detection_time_ms)}
+        />
+
+        <ComparisonMetric
+          label="Mitigation / BLOCK"
+          before="—"
+          after={formatMs(after?.mitigation_time_ms)}
+        />
+      </div>
+    </article>
+  );
+}
+
+function ComparisonMetric({ label, before, after }) {
+  return (
+    <div className="comparison-metric">
+      <span>{label}</span>
+      <strong>{before}</strong>
+      <strong className="after-value">{after}</strong>
+    </div>
+  );
+}
+
+function LiveAttackPanel({ attackType, icon, events, sinkhole, onClear, emptyText }) {
+  const firstEvent = events[0];
+  const address = firstEvent?.address;
+  const node = firstEvent?.node;
+
+  return (
+    <section className={`live-attack-panel ${sinkhole ? "sinkhole" : ""}`}>
+      <div className="live-attack-header">
+        <div className={`live-attack-icon ${sinkhole ? "sinkhole" : ""}`}>
+          {icon}
+        </div>
+
+        <div>
+          <span>LIVE ATTACK STREAM</span>
+          <h4>{attackType} — Node {node ?? 5}</h4>
+          <small>{address || "Source address will appear with the next event"}</small>
+        </div>
+
+        <div className="live-panel-actions">
+          <span className="live-stream-state">
+            {events.length ? "RECENT RUN" : "WAITING"}
+          </span>
+          <button
+            className="clear-live-btn"
+            type="button"
+            onClick={onClear}
+            title={`Clear ${attackType} events from the live dashboard`}
+          >
+            <Trash2 size={12} />
+            Clear
+          </button>
+        </div>
+      </div>
+
+      {events.length === 0 ? (
+        <div className="empty-stream">
+          <ShieldCheck size={26} />
+          <p>{emptyText}</p>
+        </div>
+      ) : (
+        <div className="event-timeline">
+          {events.map((event) => (
+            <div className="timeline-item" key={event.id}>
+              <div className={`timeline-dot status-${String(event.status).toLowerCase()}`} />
+
+              <div className="timeline-content">
+                <div className="timeline-top">
+                  <strong>{event.status}</strong>
+                  <span>
+                    {event.eventTimeMs !== null && event.eventTimeMs !== undefined
+                      ? formatSimulationTime(event.eventTimeMs)
+                      : new Date(event.timestamp).toLocaleTimeString()}
+                  </span>
+                </div>
+
+                <p>{event.message || "IDS event received"}</p>
+
+                <div className="timeline-meta">
+                  {event.detectionTimeMs !== null &&
+                    event.detectionTimeMs !== undefined && (
+                      <span>Detection {formatMs(event.detectionTimeMs)}</span>
+                    )}
+
+                  {event.mitigationTimeMs !== null &&
+                    event.mitigationTimeMs !== undefined && (
+                      <span>Mitigation {formatMs(event.mitigationTimeMs)}</span>
+                    )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </section>
+  );
+}
+
+function Metric({ icon, label, value }) {
+  return (
+    <div className="metric-row">
+      <div className="metric-icon">{icon}</div>
+      <span>{label}</span>
+      <strong>{value}</strong>
+    </div>
+  );
+}
+
+export default App;

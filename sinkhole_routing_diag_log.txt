@@ -1,0 +1,529 @@
+00:00.236	ID:2	[INFO: Main      ] Starting Contiki-NG-release/v5.2-dirty
+00:00.236	ID:2	[INFO: Main      ] - Routing: RPL Lite
+00:00.236	ID:2	[INFO: Main      ] - Net: sicslowpan
+00:00.236	ID:2	[INFO: Main      ] - MAC: CSMA
+00:00.236	ID:2	[INFO: Main      ] - 802.15.4 PANID: 0xabcd
+00:00.236	ID:2	[INFO: Main      ] - 802.15.4 Default channel: 26
+00:00.236	ID:2	[INFO: Main      ] Node ID: 2
+00:00.236	ID:2	[INFO: Main      ] Link-layer address: 0002.0002.0002.0002
+00:00.236	ID:2	[INFO: Main      ] Tentative link-local IPv6 address: fe80::202:2:2:2
+00:00.236	ID:2	[INFO: NormalNode] Normal IoT node starting
+00:00.348	ID:4	[INFO: Main      ] Starting Contiki-NG-release/v5.2-dirty
+00:00.348	ID:4	[INFO: Main      ] - Routing: RPL Lite
+00:00.348	ID:4	[INFO: Main      ] - Net: sicslowpan
+00:00.348	ID:4	[INFO: Main      ] - MAC: CSMA
+00:00.348	ID:4	[INFO: Main      ] - 802.15.4 PANID: 0xabcd
+00:00.348	ID:4	[INFO: Main      ] - 802.15.4 Default channel: 26
+00:00.348	ID:4	[INFO: Main      ] Node ID: 4
+00:00.348	ID:4	[INFO: Main      ] Link-layer address: 0004.0004.0004.0004
+00:00.348	ID:4	[INFO: Main      ] Tentative link-local IPv6 address: fe80::204:4:4:4
+00:00.348	ID:4	[INFO: NormalNode] Normal IoT node starting
+00:00.382	ID:1	[INFO: Main      ] Starting Contiki-NG-release/v5.2-dirty
+00:00.382	ID:1	[INFO: Main      ] - Routing: RPL Lite
+00:00.382	ID:1	[INFO: Main      ] - Net: sicslowpan
+00:00.382	ID:1	[INFO: Main      ] - MAC: CSMA
+00:00.382	ID:1	[INFO: Main      ] - 802.15.4 PANID: 0xabcd
+00:00.382	ID:1	[INFO: Main      ] - 802.15.4 Default channel: 26
+00:00.382	ID:1	[INFO: Main      ] Node ID: 1
+00:00.382	ID:1	[INFO: Main      ] Link-layer address: 0001.0001.0001.0001
+00:00.382	ID:1	[INFO: Main      ] Tentative link-local IPv6 address: fe80::201:1:1:1
+00:00.382	ID:1	[INFO: No-IDS-Root] Secure IoT Sinkhole No-IDS root starting
+00:00.715	ID:5	[INFO: Main      ] Starting Contiki-NG-release/v5.2-dirty
+00:00.715	ID:5	[INFO: Main      ] - Routing: RPL Lite
+00:00.715	ID:5	[INFO: Main      ] - Net: sicslowpan
+00:00.715	ID:5	[INFO: Main      ] - MAC: CSMA
+00:00.715	ID:5	[INFO: Main      ] - 802.15.4 PANID: 0xabcd
+00:00.715	ID:5	[INFO: Main      ] - 802.15.4 Default channel: 26
+00:00.715	ID:5	[INFO: Main      ] Node ID: 5
+00:00.715	ID:5	[INFO: Main      ] Link-layer address: 0005.0005.0005.0005
+00:00.715	ID:5	[INFO: Main      ] Tentative link-local IPv6 address: fe80::205:5:5:5
+00:00.715	ID:5	[INFO: Sinkhole  ] Sinkhole attacker starting
+00:00.899	ID:3	[INFO: Main      ] Starting Contiki-NG-release/v5.2-dirty
+00:00.899	ID:3	[INFO: Main      ] - Routing: RPL Lite
+00:00.899	ID:3	[INFO: Main      ] - Net: sicslowpan
+00:00.899	ID:3	[INFO: Main      ] - MAC: CSMA
+00:00.899	ID:3	[INFO: Main      ] - 802.15.4 PANID: 0xabcd
+00:00.899	ID:3	[INFO: Main      ] - 802.15.4 Default channel: 26
+00:00.899	ID:3	[INFO: Main      ] Node ID: 3
+00:00.899	ID:3	[INFO: Main      ] Link-layer address: 0003.0003.0003.0003
+00:00.899	ID:3	[INFO: Main      ] Tentative link-local IPv6 address: fe80::203:3:3:3
+00:00.899	ID:3	[INFO: NormalNode] Normal IoT node starting
+00:02.236	ID:2	[INFO: NormalNode] RPL PARENT: no DAG
+00:02.348	ID:4	[INFO: NormalNode] RPL PARENT: no DAG
+00:02.899	ID:3	[INFO: NormalNode] RPL PARENT: no DAG
+00:04.236	ID:2	[INFO: NormalNode] RPL PARENT: none local_rank=65535
+00:04.348	ID:4	[INFO: NormalNode] RPL PARENT: no DAG
+00:04.899	ID:3	[INFO: NormalNode] RPL PARENT: no DAG
+00:06.236	ID:2	[INFO: NormalNode] RPL PARENT: none local_rank=65535
+00:06.348	ID:4	[INFO: NormalNode] RPL PARENT: no DAG
+00:06.899	ID:3	[INFO: NormalNode] RPL PARENT: no DAG
+00:07.461	ID:4	[INFO: NormalNode] RPL root not reachable yet
+00:08.236	ID:2	[INFO: NormalNode] RPL PARENT: none local_rank=65535
+00:08.348	ID:4	[INFO: NormalNode] RPL PARENT: no DAG
+00:08.581	ID:3	[INFO: NormalNode] RPL root not reachable yet
+00:08.813	ID:2	[INFO: NormalNode] RPL root not reachable yet
+00:08.899	ID:3	[INFO: NormalNode] RPL PARENT: no DAG
+00:10.236	ID:2	[INFO: NormalNode] RPL PARENT: none local_rank=65535
+00:10.348	ID:4	[INFO: NormalNode] RPL PARENT: no DAG
+00:10.715	ID:5	[WARN: Sinkhole  ] SINKHOLE ATTACK ACTIVE
+00:10.716	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+00:10.899	ID:3	[INFO: NormalNode] RPL PARENT: none local_rank=65535
+00:12.236	ID:2	[INFO: NormalNode] RPL PARENT: none local_rank=65535
+00:12.348	ID:4	[INFO: NormalNode] RPL PARENT: no DAG
+00:12.899	ID:3	[INFO: NormalNode] RPL PARENT: none local_rank=65535
+00:14.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=369
+00:14.348	ID:4	[INFO: NormalNode] RPL PARENT: no DAG
+00:14.899	ID:3	[INFO: NormalNode] RPL PARENT: none local_rank=65535
+00:15.717	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+00:16.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=369
+00:16.348	ID:4	[INFO: NormalNode] RPL PARENT: no DAG
+00:16.899	ID:3	[INFO: NormalNode] RPL PARENT: none local_rank=65535
+00:18.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=360
+00:18.348	ID:4	[INFO: NormalNode] RPL PARENT: no DAG
+00:18.899	ID:3	[INFO: NormalNode] RPL PARENT: none local_rank=65535
+00:20.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=360
+00:20.348	ID:4	[INFO: NormalNode] RPL PARENT: no DAG
+00:20.718	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+00:20.899	ID:3	[INFO: NormalNode] RPL PARENT: none local_rank=65535
+00:22.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=360
+00:22.348	ID:4	[INFO: NormalNode] RPL PARENT: no DAG
+00:22.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=364
+00:24.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=360
+00:24.348	ID:4	[INFO: NormalNode] RPL PARENT: no DAG
+00:24.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=364
+00:25.719	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+00:26.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=360
+00:26.348	ID:4	[INFO: NormalNode] RPL PARENT: no DAG
+00:26.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=356
+00:28.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=360
+00:28.348	ID:4	[INFO: NormalNode] RPL PARENT: no DAG
+00:28.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=356
+00:30.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=360
+00:30.348	ID:4	[INFO: NormalNode] RPL PARENT: none local_rank=65535
+00:30.720	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+00:30.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=356
+00:32.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=360
+00:32.348	ID:4	[INFO: NormalNode] RPL PARENT: none local_rank=65535
+00:32.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=356
+00:34.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=360
+00:34.348	ID:4	[INFO: NormalNode] RPL PARENT: none local_rank=65535
+00:34.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=356
+00:35.721	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+00:36.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=360
+00:36.348	ID:4	[INFO: NormalNode] RPL PARENT: none local_rank=65535
+00:36.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=356
+00:38.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=360
+00:38.348	ID:4	[INFO: NormalNode] RPL PARENT: none local_rank=65535
+00:38.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=356
+00:40.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=360
+00:40.348	ID:4	[INFO: NormalNode] RPL PARENT: none local_rank=65535
+00:40.722	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+00:40.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=356
+00:42.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=360
+00:42.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=339
+00:42.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=356
+00:44.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=360
+00:44.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=339
+00:44.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=356
+00:45.723	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+00:46.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=360
+00:46.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=333
+00:46.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=349
+00:48.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=360
+00:48.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=333
+00:48.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=349
+00:50.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=360
+00:50.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=333
+00:50.724	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+00:50.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=349
+00:52.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=360
+00:52.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=333
+00:52.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=349
+00:54.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=360
+00:54.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=333
+00:54.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=349
+00:55.725	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+00:56.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=360
+00:56.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=333
+00:56.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=349
+00:58.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=360
+00:58.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=333
+00:58.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=349
+01:00.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=360
+01:00.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=333
+01:00.726	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+01:00.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=349
+01:02.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=360
+01:02.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=333
+01:02.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=349
+01:04.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=360
+01:04.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=333
+01:04.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=349
+01:05.727	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+01:06.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=360
+01:06.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=333
+01:06.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=349
+01:07.807	ID:4	[INFO: NormalNode] NORMAL TX seq=0 -> fd00::201:1:1:1
+01:07.952	ID:1	[INFO: No-IDS-Root] Received packet from fd00::204:4:4:4
+01:08.030	ID:4	[INFO: NormalNode] RESPONSE seq=0 latency_ms=223
+01:08.030	ID:4	[INFO: NormalNode] NORMAL METRIC tx=1 rx=1 missed=0
+01:08.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=360
+01:08.292	ID:3	[INFO: NormalNode] NORMAL TX seq=0 -> fd00::201:1:1:1
+01:08.338	ID:1	[INFO: No-IDS-Root] Received packet from fd00::203:3:3:3
+01:08.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=328
+01:08.389	ID:3	[INFO: NormalNode] RESPONSE seq=0 latency_ms=97
+01:08.389	ID:3	[INFO: NormalNode] NORMAL METRIC tx=1 rx=1 missed=0
+01:08.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=336
+01:09.732	ID:2	[INFO: NormalNode] NORMAL TX seq=0 -> fd00::201:1:1:1
+01:09.763	ID:1	[INFO: No-IDS-Root] Received packet from fd00::202:2:2:2
+01:09.792	ID:2	[INFO: NormalNode] RESPONSE seq=0 latency_ms=60
+01:09.792	ID:2	[INFO: NormalNode] NORMAL METRIC tx=1 rx=1 missed=0
+01:10.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=352
+01:10.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=328
+01:10.728	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+01:10.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=336
+01:12.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=352
+01:12.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=328
+01:12.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=336
+01:14.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=352
+01:14.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=328
+01:14.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=336
+01:15.729	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+01:16.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=352
+01:16.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=328
+01:16.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=336
+01:18.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=352
+01:18.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=328
+01:18.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=336
+01:20.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=352
+01:20.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=328
+01:20.730	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+01:20.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=336
+01:22.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=352
+01:22.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=328
+01:22.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=336
+01:24.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=352
+01:24.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=328
+01:24.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=336
+01:25.731	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+01:26.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=352
+01:26.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=328
+01:26.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=336
+01:28.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=352
+01:28.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=328
+01:28.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=336
+01:30.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=352
+01:30.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=328
+01:30.732	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+01:30.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=336
+01:32.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=352
+01:32.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=328
+01:32.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=336
+01:34.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=352
+01:34.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=328
+01:34.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=336
+01:35.733	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+01:36.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=352
+01:36.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=328
+01:36.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=336
+01:38.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=352
+01:38.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=328
+01:38.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=336
+01:40.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=352
+01:40.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=328
+01:40.734	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+01:40.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=336
+01:42.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=352
+01:42.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=328
+01:42.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=336
+01:44.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=352
+01:44.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=328
+01:44.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=336
+01:45.735	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+01:46.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=352
+01:46.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=328
+01:46.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=336
+01:48.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=352
+01:48.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=328
+01:48.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=336
+01:50.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=352
+01:50.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=328
+01:50.736	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+01:50.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=336
+01:52.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=352
+01:52.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=328
+01:52.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=336
+01:54.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=352
+01:54.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=328
+01:54.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=336
+01:55.737	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+01:56.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=352
+01:56.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=328
+01:56.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=336
+01:58.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=352
+01:58.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=328
+01:58.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=336
+02:00.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=352
+02:00.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=328
+02:00.738	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+02:00.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=336
+02:02.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=352
+02:02.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=328
+02:02.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=336
+02:04.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=352
+02:04.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=328
+02:04.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=336
+02:05.739	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+02:06.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=352
+02:06.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=328
+02:06.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=336
+02:06.960	ID:4	[INFO: NormalNode] NORMAL TX seq=1 -> fd00::201:1:1:1
+02:07.018	ID:1	[INFO: No-IDS-Root] Received packet from fd00::204:4:4:4
+02:07.241	ID:4	[INFO: NormalNode] RESPONSE seq=1 latency_ms=281
+02:07.241	ID:4	[INFO: NormalNode] NORMAL METRIC tx=2 rx=2 missed=0
+02:07.781	ID:3	[INFO: NormalNode] NORMAL TX seq=1 -> fd00::201:1:1:1
+02:07.812	ID:1	[INFO: No-IDS-Root] Received packet from fd00::203:3:3:3
+02:07.858	ID:3	[INFO: NormalNode] RESPONSE seq=1 latency_ms=77
+02:07.858	ID:3	[INFO: NormalNode] NORMAL METRIC tx=2 rx=2 missed=0
+02:08.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=352
+02:08.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=324
+02:08.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=326
+02:09.786	ID:2	[INFO: NormalNode] NORMAL TX seq=1 -> fd00::201:1:1:1
+02:09.793	ID:1	[INFO: No-IDS-Root] Received packet from fd00::202:2:2:2
+02:09.800	ID:2	[INFO: NormalNode] RESPONSE seq=1 latency_ms=14
+02:09.800	ID:2	[INFO: NormalNode] NORMAL METRIC tx=2 rx=2 missed=0
+02:10.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=345
+02:10.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=324
+02:10.740	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+02:10.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=326
+02:12.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=345
+02:12.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=324
+02:12.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=326
+02:14.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=345
+02:14.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=324
+02:14.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=326
+02:15.741	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+02:16.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=345
+02:16.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=324
+02:16.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=326
+02:18.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=345
+02:18.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=324
+02:18.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=326
+02:20.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=345
+02:20.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=324
+02:20.742	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+02:20.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=326
+02:22.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=345
+02:22.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=324
+02:22.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=326
+02:24.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=345
+02:24.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=324
+02:24.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=326
+02:25.743	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+02:26.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=345
+02:26.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=324
+02:26.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=326
+02:28.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=345
+02:28.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=324
+02:28.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=326
+02:30.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=345
+02:30.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=324
+02:30.744	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+02:30.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=326
+02:32.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=345
+02:32.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=324
+02:32.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=326
+02:34.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=345
+02:34.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=324
+02:34.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=326
+02:35.745	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+02:36.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=345
+02:36.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=324
+02:36.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=326
+02:38.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=345
+02:38.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=324
+02:38.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=326
+02:40.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=345
+02:40.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=324
+02:40.746	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+02:40.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=326
+02:42.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=345
+02:42.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=324
+02:42.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=326
+02:44.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=345
+02:44.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=324
+02:44.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=326
+02:45.747	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+02:46.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=345
+02:46.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=324
+02:46.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=326
+02:48.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=345
+02:48.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=324
+02:48.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=326
+02:50.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=345
+02:50.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=324
+02:50.748	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+02:50.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=326
+02:52.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=345
+02:52.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=324
+02:52.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=326
+02:54.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=345
+02:54.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=324
+02:54.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=326
+02:55.749	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+02:56.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=345
+02:56.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=324
+02:56.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=326
+02:58.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=345
+02:58.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=324
+02:58.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=326
+03:00.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=345
+03:00.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=324
+03:00.750	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+03:00.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=326
+03:02.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=345
+03:02.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=324
+03:02.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=326
+03:04.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=345
+03:04.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=324
+03:04.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=326
+03:05.751	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+03:06.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=345
+03:06.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=324
+03:06.588	ID:4	[INFO: NormalNode] NORMAL TX seq=2 -> fd00::201:1:1:1
+03:06.654	ID:1	[INFO: No-IDS-Root] Received packet from fd00::204:4:4:4
+03:06.738	ID:4	[INFO: NormalNode] RESPONSE seq=2 latency_ms=150
+03:06.738	ID:4	[INFO: NormalNode] NORMAL METRIC tx=3 rx=3 missed=0
+03:06.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=322
+03:08.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=345
+03:08.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=320
+03:08.612	ID:3	[INFO: NormalNode] NORMAL TX seq=2 -> fd00::201:1:1:1
+03:08.641	ID:1	[INFO: No-IDS-Root] Received packet from fd00::203:3:3:3
+03:08.707	ID:3	[INFO: NormalNode] RESPONSE seq=2 latency_ms=95
+03:08.707	ID:3	[INFO: NormalNode] NORMAL METRIC tx=3 rx=3 missed=0
+03:08.819	ID:2	[INFO: NormalNode] NORMAL TX seq=2 -> fd00::201:1:1:1
+03:08.842	ID:1	[INFO: No-IDS-Root] Received packet from fd00::202:2:2:2
+03:08.848	ID:2	[INFO: NormalNode] RESPONSE seq=2 latency_ms=29
+03:08.848	ID:2	[INFO: NormalNode] NORMAL METRIC tx=3 rx=3 missed=0
+03:08.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=318
+03:10.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=339
+03:10.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=320
+03:10.752	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+03:10.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=318
+03:12.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=339
+03:12.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=320
+03:12.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=318
+03:14.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=339
+03:14.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=320
+03:14.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=318
+03:15.753	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+03:16.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=339
+03:16.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=320
+03:16.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=318
+03:18.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=339
+03:18.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=320
+03:18.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=318
+03:20.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=339
+03:20.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=320
+03:20.754	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+03:20.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=318
+03:22.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=339
+03:22.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=320
+03:22.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=318
+03:24.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=339
+03:24.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=320
+03:24.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=318
+03:25.755	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+03:26.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=339
+03:26.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=320
+03:26.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=318
+03:28.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=339
+03:28.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=320
+03:28.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=318
+03:30.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=339
+03:30.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=320
+03:30.756	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+03:30.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=318
+03:32.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=339
+03:32.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=320
+03:32.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=318
+03:34.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=339
+03:34.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=320
+03:34.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=318
+03:35.757	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+03:36.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=339
+03:36.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=320
+03:36.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=318
+03:38.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=339
+03:38.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=320
+03:38.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=318
+03:40.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=339
+03:40.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=320
+03:40.758	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+03:40.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=318
+03:42.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=339
+03:42.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=320
+03:42.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=318
+03:44.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=339
+03:44.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=320
+03:44.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=318
+03:45.759	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+03:46.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=339
+03:46.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=320
+03:46.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=318
+03:48.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=339
+03:48.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=320
+03:48.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=318
+03:50.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=339
+03:50.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=320
+03:50.760	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+03:50.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=318
+03:52.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=339
+03:52.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=320
+03:52.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=318
+03:54.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=339
+03:54.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=320
+03:54.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=318
+03:55.761	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+03:56.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=339
+03:56.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=320
+03:56.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=318
+03:58.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=339
+03:58.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=320
+03:58.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=318
+04:00.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=339
+04:00.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=320
+04:00.762	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+04:00.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=318
+04:02.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=339
+04:02.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=320
+04:02.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=318
+04:04.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=339
+04:04.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=320
+04:04.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=318
+04:05.763	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+04:06.067	ID:4	[INFO: NormalNode] NORMAL TX seq=3 -> fd00::201:1:1:1
+04:06.144	ID:1	[INFO: No-IDS-Root] Received packet from fd00::204:4:4:4
+04:06.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=339
+04:06.255	ID:4	[INFO: NormalNode] RESPONSE seq=3 latency_ms=188
+04:06.255	ID:4	[INFO: NormalNode] NORMAL METRIC tx=4 rx=4 missed=0
+04:06.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=316
+04:06.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=315
+04:07.624	ID:3	[INFO: NormalNode] NORMAL TX seq=3 -> fd00::201:1:1:1
+04:07.637	ID:1	[INFO: No-IDS-Root] Received packet from fd00::203:3:3:3
+04:07.681	ID:3	[INFO: NormalNode] RESPONSE seq=3 latency_ms=57
+04:07.681	ID:3	[INFO: NormalNode] NORMAL METRIC tx=4 rx=4 missed=0
+04:07.827	ID:2	[INFO: NormalNode] NORMAL TX seq=3 -> fd00::201:1:1:1
+04:07.872	ID:1	[INFO: No-IDS-Root] Received packet from fd00::202:2:2:2
+04:07.901	ID:2	[INFO: NormalNode] RESPONSE seq=3 latency_ms=74
+04:07.901	ID:2	[INFO: NormalNode] NORMAL METRIC tx=4 rx=4 missed=0
+04:08.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=333
+04:08.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=316
+04:08.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=312
+04:10.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=333
+04:10.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=316
+04:10.764	ID:5	[WARN: Sinkhole  ] SINKHOLE DIO SENT with fake attractive rank
+04:10.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=312
+04:12.236	ID:2	[INFO: NormalNode] RPL PARENT: fe80::201:1:1:1 rank=160 local_rank=333
+04:12.348	ID:4	[INFO: NormalNode] RPL PARENT: fe80::203:3:3:3 rank=160 local_rank=316
+04:12.899	ID:3	[INFO: NormalNode] RPL PARENT: fe80::205:5:5:5 rank=160 local_rank=312

@@ -1,0 +1,4 @@
+scenario,tx,rx,pdr_percent,avg_latency_ms,flood_packets,flood_rate,detection_time,mitigation_time,ids_drops
+Normal,15,15,100.0,0,0,0,,,0
+Flooding (No IDS),15,15,100.0,0,3207,9.901081830619233,,,0
+Flooding + IDS,15,15,100.0,0,6,9.90099009900992,508.9999999999986,10.000000000001563,1
